@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shivu | B.Tech CSE Cybersecurity & Digital Forensics at VIT Bhopal. Penetration tester, ethical hacker, security researcher." />
+  <title>Shivu | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo"><span class="bracket">[</span>shivu<span class="accent">@</span>sec<span class="bracket">]</span><span class="cursor-blink">_</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#certs">certs</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobileMenu()">about</a></li>
+      <li><a href="#skills" onclick="closeMobileMenu()">skills</a></li>
+      <li><a href="#projects" onclick="closeMobileMenu()">projects</a></li>
+      <li><a href="#certs" onclick="closeMobileMenu()">certs</a></li>
+      <li><a href="#contact" onclick="closeMobileMenu()">contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag">// B.Tech CSE &bull; Cybersecurity &amp; Digital Forensics</div>
+      <h1 class="hero-name">Hi, I'm <span class="accent-text">Shivu</span></h1>
+      <p class="hero-tagline">I break things to make them <span class="accent-text">secure.</span></p>
+      <p class="hero-sub">Ethical Hacker &bull; Penetration Tester &bull; Security Researcher<br>VIT Bhopal University &bull; 2nd Year</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-scroll">scroll down ↓</div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">kali@shivu:~$</span>
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">// 01. about_me</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a second-year Computer Science Engineering student at <strong>VIT Bhopal University</strong>, specializing in <strong>Cybersecurity & Digital Forensics</strong>. I'm passionate about ethical hacking, penetration testing, and building security tools from scratch.</p>
+          <p>My hands-on experience spans web application security, network analysis, and IoT security — with real projects that simulate real-world attack and defense scenarios.</p>
+          <p>I'm actively seeking <strong>cybersecurity internships</strong> to sharpen my skills and contribute to meaningful security research.</p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-number">2+</span><span class="stat-label">Years Learning</span></div>
+            <div class="stat"><span class="stat-number">2</span><span class="stat-label">Major Projects</span></div>
+            <div class="stat"><span class="stat-number">10+</span><span class="stat-label">Tools Mastered</span></div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-header">
+            <span class="about-card-title">shivu.json</span>
+          </div>
+          <pre class="about-json">{
+  <span class="json-key">"name"</span>: <span class="json-str">"Shivu"</span>,
+  <span class="json-key">"degree"</span>: <span class="json-str">"B.Tech CSE"</span>,
+  <span class="json-key">"specialization"</span>: <span class="json-str">"Cybersecurity &amp; DF"</span>,
+  <span class="json-key">"university"</span>: <span class="json-str">"VIT Bhopal"</span>,
+  <span class="json-key">"year"</span>: <span class="json-num">2</span>,
+  <span class="json-key">"focus"</span>: [
+    <span class="json-str">"Penetration Testing"</span>,
+    <span class="json-str">"Ethical Hacking"</span>,
+    <span class="json-str">"IoT Security"</span>
+  ],
+  <span class="json-key">"available"</span>: <span class="json-bool">true</span>
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-label">// 02. skills</div>
+      <h2 class="section-title">Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-cat">
+          <div class="skill-cat-title">🛡️ Security Tools</div>
+          <div class="skill-tags">
+            <span class="tag tag-red">Kali Linux</span>
+            <span class="tag tag-red">Burp Suite</span>
+            <span class="tag tag-red">Metasploit</span>
+            <span class="tag tag-red">Nmap</span>
+            <span class="tag tag-red">Wireshark</span>
+            <span class="tag tag-red">SQLmap</span>
+            <span class="tag tag-red">Gobuster</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">💻 Programming</div>
+          <div class="skill-tags">
+            <span class="tag tag-blue">Python</span>
+            <span class="tag tag-blue">Java</span>
+            <span class="tag tag-blue">SQL</span>
+            <span class="tag tag-blue">Bash / Shell</span>
+            <span class="tag tag-blue">HTML / CSS</span>
+            <span class="tag tag-blue">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">🌐 Domains</div>
+          <div class="skill-tags">
+            <span class="tag tag-green">Web App Pentesting</span>
+            <span class="tag tag-green">Network Security</span>
+            <span class="tag tag-green">IoT Security</span>
+            <span class="tag tag-green">Digital Forensics</span>
+            <span class="tag tag-green">MQTT Protocol</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">⚙️ Platforms & Labs</div>
+          <div class="skill-tags">
+            <span class="tag tag-yellow">Metasploitable 2</span>
+            <span class="tag tag-yellow">TryHackMe</span>
+            <span class="tag tag-yellow">GitHub</span>
+            <span class="tag tag-yellow">MySQL Workbench</span>
+            <span class="tag tag-yellow">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label">// 03. projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🔐</div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="GitHub">⌥ GitHub</a>
+            </div>
+          </div>
+          <h3 class="project-name">BruteForceLab</h3>
+          <p class="project-tagline">Brute Force Simulation Framework</p>
+          <p class="project-desc">A modular framework for simulating and studying brute-force attack vectors in a controlled, ethical lab environment. Built to demonstrate real-world attack scenarios for educational purposes.</p>
+          <div class="project-role">
+            <span class="role-label">My Contribution:</span>
+            <span class="role-text">GUI Development & System Integration</span>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Kali Linux</span>
+            <span class="ptag">GUI</span>
+            <span class="ptag">Security Research</span>
+          </div>
+        </div>
+
+        <div class="project-card project-card-featured">
+          <div class="project-header">
+            <div class="project-icon">🌐</div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="GitHub">⌥ GitHub</a>
+            </div>
+          </div>
+          <div class="featured-badge">Featured Project</div>
+          <h3 class="project-name">VITGuard</h3>
+          <p class="project-tagline">6-Layer IoT Security Monitoring System</p>
+          <p class="project-desc">A comprehensive IoT security framework with six defense layers — monitoring, threat detection, and incident response. Simulates real IoT environments to test and validate security postures.</p>
+          <div class="project-role">
+            <span class="role-label">My Contribution:</span>
+            <span class="role-text">Victim App Simulation Module & Security Engine</span>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">IoT</span>
+            <span class="ptag">MQTT</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">Security Engine</span>
+            <span class="ptag">Network Monitoring</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section section-alt" id="certs">
+    <div class="container">
+      <div class="section-label">// 04. certifications</div>
+      <h2 class="section-title">Credentials</h2>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-info">
+            <div class="cert-name">TryHackMe</div>
+            <div class="cert-body">Penetration Testing Labs</div>
+            <div class="cert-status active">Active</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <div class="cert-name">Google Cybersecurity</div>
+            <div class="cert-body">Professional Certificate</div>
+            <div class="cert-status">Coursera</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🗄️</div>
+          <div class="cert-info">
+            <div class="cert-name">MongoDB</div>
+            <div class="cert-body">Database Certification</div>
+            <div class="cert-status">MongoDB University</div>
+          </div>
+        </div>
+        <div class="cert-card cert-wip">
+          <div class="cert-icon">🎯</div>
+          <div class="cert-info">
+            <div class="cert-name">eJPT / CEH</div>
+            <div class="cert-body">Industry Certification</div>
+            <div class="cert-status wip">In Progress</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label">// 05. contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-intro">I'm actively looking for cybersecurity internships. Whether you have an opportunity, want to collaborate on a CTF, or just want to talk security — my inbox is open.</p>
+      <div class="contact-links">
+        <a href="mailto:your.email@example.com" class="contact-btn">
+          <span class="contact-icon">📧</span>
+          <span>Email Me</span>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="contact-btn">
+          <span class="contact-icon">⌥</span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-btn">
+          <span class="contact-icon">💼</span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Designed &amp; Built by <span class="accent-text">Shivu</span> &bull; VIT Bhopal &bull; <span id="year"></span></p>
+    <p class="footer-sub">Ethically hacking since day one.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

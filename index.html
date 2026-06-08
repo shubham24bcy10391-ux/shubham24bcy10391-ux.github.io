@@ -1,300 +1,794 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Shubham Sharma | B.Tech CSE Cybersecurity & Digital Forensics at VIT Bhopal. Penetration tester, ethical hacker, security researcher." />
-  <title>Shubham Sharma | Cybersecurity</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shubham Sharma | B.Tech CSE Cybersecurity and Digital Forensics student at VIT Bhopal. Ethical hacker, penetration tester, and security researcher."
+    />
+    <title>Shubham Sharma | Cybersecurity Portfolio</title>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-logo"><span class="bracket">[</span>shubham<span class="accent">@</span>sec<span class="bracket">]</span><span class="cursor-blink">_</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certs">Certs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle">&#9776;</button>
-  </nav>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
-      <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
-      <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
-      <li><a href="#certs" onclick="closeMobileMenu()">Certs</a></li>
-      <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
-    </ul>
-  </div>
+      html {
+        scroll-behavior: smooth;
+      }
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-watermark">SECURITY</div>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #05070d;
+        color: #ffffff;
+        line-height: 1.6;
+      }
 
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      B.Tech CSE &nbsp;|&nbsp; Cybersecurity &amp; Digital Forensics
-    </div>
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    <h1 class="hero-headline">
-      <span class="line1">Shubham</span>
-      <span class="line2">Sharma.</span>
-    </h1>
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        background: rgba(5, 7, 13, 0.86);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
 
-    <p class="hero-sub">
-      Ethical Hacker &bull; Penetration Tester &bull; Security Researcher<br>
-      VIT Bhopal University &bull; 2nd Year
-    </p>
+      .nav {
+        max-width: 1180px;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">🚀 View My Work →</a>
-      <a href="#contact" class="btn btn-outline">🛡 Get In Touch</a>
-    </div>
+      .logo {
+        font-size: 22px;
+        font-weight: 800;
+      }
 
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-number">2+</div>
-        <div class="stat-label">Years Learning</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Major Projects</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Tools Mastered</div>
-      </div>
-    </div>
-  </section>
+      .logo span {
+        color: #34f5c5;
+      }
 
-  <!-- ABOUT -->
-  <section class="section section-dark" id="about">
-    <div class="container">
-      <div class="section-eyebrow"><span class="eyebrow-num">01</span><div class="eyebrow-divider"></div><span>About Me</span></div>
-      <h2 class="section-title">Who I <span>Am.</span></h2>
-      <div class="about-grid">
-        <div class="about-text fade-in">
-          <p>I'm a second-year Computer Science Engineering student at <strong>VIT Bhopal University</strong>, specializing in <strong>Cybersecurity & Digital Forensics</strong>. I'm passionate about ethical hacking, penetration testing, and building security tools from scratch.</p>
-          <p>My hands-on experience spans web application security, network analysis, and IoT security — with real projects that simulate real-world attack and defense scenarios.</p>
-          <p>I'm actively seeking <strong>cybersecurity internships</strong> to sharpen my skills and contribute to meaningful security research.</p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num-lg">2+</span><span class="stat-lbl">Years Learning</span></div>
-            <div class="stat"><span class="stat-num-lg">2</span><span class="stat-lbl">Major Projects</span></div>
-            <div class="stat"><span class="stat-num-lg">10+</span><span class="stat-lbl">Tools Mastered</span></div>
-          </div>
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 14px;
+        color: #c9d3df;
+      }
+
+      .nav-links a:hover {
+        color: #34f5c5;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 13px 22px;
+        border: 1px solid #34f5c5;
+        background: #34f5c5;
+        color: #04100d;
+        font-weight: 700;
+        border-radius: 4px;
+        transition: 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: transparent;
+        color: #34f5c5;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .btn.secondary:hover {
+        border-color: #34f5c5;
+        color: #34f5c5;
+      }
+
+      .hero {
+        min-height: 100vh;
+        padding: 150px 20px 80px;
+        display: flex;
+        align-items: center;
+        background:
+          linear-gradient(rgba(5, 7, 13, 0.55), rgba(5, 7, 13, 0.94)),
+          url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-inner {
+        width: 100%;
+        max-width: 1180px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        color: #34f5c5;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 7vw, 88px);
+        line-height: 0.95;
+        max-width: 780px;
+        margin-bottom: 28px;
+      }
+
+      .hero p {
+        max-width: 650px;
+        color: #c6d0dc;
+        font-size: 18px;
+        margin-bottom: 34px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .security-panel {
+        border: 1px solid rgba(52, 245, 197, 0.32);
+        background: rgba(8, 14, 24, 0.78);
+        border-radius: 8px;
+        padding: 28px;
+        box-shadow: 0 0 60px rgba(52, 245, 197, 0.14);
+      }
+
+      .security-panel h3 {
+        margin-bottom: 20px;
+        font-size: 22px;
+      }
+
+      .scan-line {
+        height: 8px;
+        background: linear-gradient(90deg, transparent, #34f5c5, transparent);
+        margin: 22px 0;
+        animation: scan 2.6s infinite;
+      }
+
+      @keyframes scan {
+        0% {
+          transform: translateY(-8px);
+          opacity: 0.2;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(8px);
+          opacity: 0.2;
+        }
+      }
+
+      .panel-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        color: #dce7f2;
+        font-size: 14px;
+      }
+
+      .status {
+        color: #34f5c5;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      section {
+        padding: 95px 20px;
+      }
+
+      .container {
+        max-width: 1180px;
+        margin: auto;
+      }
+
+      .section-title {
+        max-width: 760px;
+        margin-bottom: 46px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+
+      .section-title p {
+        color: #aebccd;
+        font-size: 17px;
+      }
+
+      .stats {
+        background: #0a111d;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .stat h3 {
+        color: #34f5c5;
+        font-size: 42px;
+        margin-bottom: 6px;
+      }
+
+      .stat p {
+        color: #aebccd;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-card {
+        background: #060a12;
+        border: 1px solid rgba(52, 245, 197, 0.25);
+        border-radius: 8px;
+        padding: 28px;
+        color: #dce7f2;
+      }
+
+      .about-card h3 {
+        color: #34f5c5;
+        margin-bottom: 18px;
+      }
+
+      .about-card p {
+        margin-bottom: 14px;
+        color: #c4cedb;
+      }
+
+      .info-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .info-list div {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        color: #cbd6e3;
+      }
+
+      .info-list strong {
+        color: #ffffff;
+      }
+
+      .terminal {
+        background: #060a12;
+        border: 1px solid rgba(52, 245, 197, 0.25);
+        border-radius: 8px;
+        padding: 28px;
+        font-family: Consolas, monospace;
+        color: #9fffe8;
+        min-height: 340px;
+        overflow-x: auto;
+      }
+
+      .terminal div {
+        margin-bottom: 14px;
+      }
+
+      .section-alt {
+        background: #0a111d;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .cards.two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        background: #0b1220;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 8px;
+        padding: 30px;
+        transition: 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(52, 245, 197, 0.55);
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        background: rgba(52, 245, 197, 0.12);
+        color: #34f5c5;
+        border-radius: 6px;
+        font-size: 24px;
+        margin-bottom: 22px;
+      }
+
+      .card h3 {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+
+      .card p {
+        color: #aebccd;
+        margin-bottom: 18px;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .tag {
+        padding: 8px 11px;
+        border-radius: 4px;
+        background: rgba(52, 245, 197, 0.1);
+        color: #bfffee;
+        border: 1px solid rgba(52, 245, 197, 0.2);
+        font-size: 13px;
+      }
+
+      .project-meta {
+        margin: 18px 0;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 6px;
+        color: #dce7f2;
+      }
+
+      .project-meta span {
+        display: block;
+        color: #34f5c5;
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      .cert-card {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+      }
+
+      .cert-status {
+        display: inline-block;
+        margin-top: 10px;
+        color: #34f5c5;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .contact {
+        background:
+          linear-gradient(rgba(5, 7, 13, 0.88), rgba(5, 7, 13, 0.95)),
+          url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 30px;
+      }
+
+      footer {
+        padding: 28px 20px;
+        text-align: center;
+        color: #8996a8;
+        background: #05070d;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      footer span {
+        color: #34f5c5;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .split,
+        .cards,
+        .cards.two,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .security-panel {
+          margin-top: 20px;
+        }
+
+        .info-list div {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="#home" class="logo">Shubham<span>Security</span></a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="about-card fade-in">
-          <div class="about-card-header">shubham.json</div>
-          <pre class="about-json">{
-  <span class="json-key">"name"</span>: <span class="json-str">"Shubham Sharma"</span>,
-  <span class="json-key">"degree"</span>: <span class="json-str">"B.Tech CSE"</span>,
-  <span class="json-key">"spec"</span>: <span class="json-str">"Cybersecurity &amp; DF"</span>,
-  <span class="json-key">"university"</span>: <span class="json-str">"VIT Bhopal"</span>,
-  <span class="json-key">"year"</span>: <span class="json-num">2</span>,
-  <span class="json-key">"focus"</span>: [
-    <span class="json-str">"Penetration Testing"</span>,
-    <span class="json-str">"Ethical Hacking"</span>,
-    <span class="json-str">"IoT Security"</span>
-  ],
-  <span class="json-key">"available"</span>: <span class="json-bool">true</span>
-}</pre>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="section section-blue" id="skills">
-    <div class="container">
-      <div class="section-eyebrow"><span class="eyebrow-num">02</span><div class="eyebrow-divider"></div><span>Skills</span></div>
-      <h2 class="section-title">My <span>Arsenal.</span></h2>
-      <div class="skills-3col">
-        <div class="skill-cat fade-in">
-          <div class="skill-cat-icon">🛡️</div>
-          <div class="skill-cat-title">Security Tools</div>
-          <div class="skill-tags">
-            <span class="tag tag-red">Kali Linux</span>
-            <span class="tag tag-red">Burp Suite</span>
-            <span class="tag tag-red">Metasploit</span>
-            <span class="tag tag-red">Nmap</span>
-            <span class="tag tag-red">Wireshark</span>
-            <span class="tag tag-red">SQLmap</span>
-            <span class="tag tag-red">Gobuster</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-in">
-          <div class="skill-cat-icon">💻</div>
-          <div class="skill-cat-title">Programming</div>
-          <div class="skill-tags">
-            <span class="tag tag-blue">Python</span>
-            <span class="tag tag-blue">Java</span>
-            <span class="tag tag-blue">SQL</span>
-            <span class="tag tag-blue">Bash / Shell</span>
-            <span class="tag tag-blue">HTML / CSS</span>
-            <span class="tag tag-blue">JavaScript</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-in">
-          <div class="skill-cat-icon">🌐</div>
-          <div class="skill-cat-title">Domains</div>
-          <div class="skill-tags">
-            <span class="tag tag-green">Web App Pentesting</span>
-            <span class="tag tag-green">Network Security</span>
-            <span class="tag tag-green">IoT Security</span>
-            <span class="tag tag-green">Digital Forensics</span>
-            <span class="tag tag-green">MQTT Protocol</span>
-          </div>
-        </div>
-      </div>
-      <div class="skills-bottom">
-        <div class="skill-cat fade-in">
-          <div class="skill-cat-icon">⚙️</div>
-          <div class="skill-cat-title">Platforms & Labs</div>
-          <div class="skill-tags">
-            <span class="tag tag-yellow">Metasploitable 2</span>
-            <span class="tag tag-yellow">TryHackMe</span>
-            <span class="tag tag-yellow">GitHub</span>
-            <span class="tag tag-yellow">MySQL Workbench</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-in">
-          <div class="skill-cat-icon">🔍</div>
-          <div class="skill-cat-title">Currently Learning</div>
-          <div class="skill-tags">
-            <span class="tag tag-blue">eJPT</span>
-            <span class="tag tag-blue">CTF Challenges</span>
-            <span class="tag tag-blue">Malware Analysis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <a href="#contact" class="btn">Contact Me</a>
+      </nav>
+    </header>
 
-  <!-- PROJECTS -->
-  <section class="section section-dark" id="projects">
-    <div class="container">
-      <div class="section-eyebrow"><span class="eyebrow-num">03</span><div class="eyebrow-divider"></div><span>Projects</span></div>
-      <h2 class="section-title">What I've <span>Built.</span></h2>
-      <div class="projects-cols">
-
-        <div class="project-card fade-in">
-          <div class="project-header">
-            <div class="project-icon">🔐</div>
-            <a href="#" class="project-link">↗ GitHub</a>
-          </div>
-          <h3 class="project-name">BruteForceLab</h3>
-          <p class="project-tagline">Brute Force Simulation Framework</p>
-          <p class="project-desc">A modular framework for simulating and studying brute-force attack vectors in a controlled, ethical lab environment. Built to demonstrate real-world attack scenarios for educational purposes.</p>
-          <div class="project-role">
-            <span class="role-label">My Contribution</span>
-            <span class="role-text">GUI Development & System Integration</span>
-          </div>
-          <div class="project-tags">
-            <span class="ptag">Python</span>
-            <span class="ptag">Kali Linux</span>
-            <span class="ptag">GUI</span>
-            <span class="ptag">Security Research</span>
-          </div>
-        </div>
-
-        <div class="project-card project-card-featured fade-in">
-          <div class="project-header">
-            <div class="project-icon">🌐</div>
-            <a href="#" class="project-link">↗ GitHub</a>
-          </div>
-          <div class="featured-badge">⭐ Featured Project</div>
-          <h3 class="project-name">VITGuard</h3>
-          <p class="project-tagline">6-Layer IoT Security Monitoring System</p>
-          <p class="project-desc">A comprehensive IoT security framework with six defense layers — monitoring, threat detection, and incident response. Simulates real IoT environments to test and validate security postures.</p>
-          <div class="project-role">
-            <span class="role-label">My Contribution</span>
-            <span class="role-text">Victim App Simulation Module & Security Engine</span>
-          </div>
-          <div class="project-tags">
-            <span class="ptag">IoT</span>
-            <span class="ptag">MQTT</span>
-            <span class="ptag">Python</span>
-            <span class="ptag">Security Engine</span>
-            <span class="ptag">Network Monitoring</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTS -->
-  <section class="section section-blue" id="certs">
-    <div class="container">
-      <div class="section-eyebrow"><span class="eyebrow-num">04</span><div class="eyebrow-divider"></div><span>Certifications</span></div>
-      <h2 class="section-title">My <span>Credentials.</span></h2>
-      <div class="certs-grid">
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🏆</div>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-inner">
           <div>
-            <div class="cert-name">TryHackMe</div>
-            <div class="cert-body">Penetration Testing Labs</div>
-            <div class="cert-status active">Active</div>
-          </div>
-        </div>
-        <div class="cert-card fade-in">
-          <div class="cert-icon">📜</div>
-          <div>
-            <div class="cert-name">Google Cybersecurity</div>
-            <div class="cert-body">Professional Certificate</div>
-            <div class="cert-status">Coursera</div>
-          </div>
-        </div>
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🗄️</div>
-          <div>
-            <div class="cert-name">MongoDB</div>
-            <div class="cert-body">Database Certification</div>
-            <div class="cert-status">MongoDB University</div>
-          </div>
-        </div>
-        <div class="cert-card cert-wip fade-in">
-          <div class="cert-icon">🎯</div>
-          <div>
-            <div class="cert-name">eJPT / CEH</div>
-            <div class="cert-body">Industry Certification</div>
-            <div class="cert-status wip">In Progress</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="eyebrow">Cybersecurity Portfolio</div>
+            <h1>Shubham Sharma</h1>
+            <p>
+              Ethical hacker, penetration tester, and security researcher pursuing
+              B.Tech CSE in Cybersecurity and Digital Forensics at VIT Bhopal University.
+            </p>
 
-  <!-- CONTACT -->
-  <section class="section section-dark" id="contact">
-    <div class="container">
-      <div class="contact-wrap">
-        <h2 class="contact-title">Let's Connect.</h2>
-        <p class="contact-intro">I'm actively looking for cybersecurity internships. Whether you have an opportunity, want to collaborate on a CTF, or just want to talk security — my inbox is open.</p>
-        <div class="contact-links">
-          <a href="mailto:shubham2chaipa1102@gmail.com" class="contact-btn"><span class="contact-icon">📧</span> Email Me</a>
-          <a href="https://github.com/shubham24bcy10391-ux" target="_blank" class="contact-btn"><span class="contact-icon">⌥</span> GitHub</a>
-          <a href="https://www.linkedin.com/in/shubham-sharma-513230325?utm_source=share_via&utm_content=profile&utm_medium=member_android/in/yourusername" target="_blank" class="contact-btn"><span class="contact-icon">💼</span> LinkedIn</a>
-          <a href="https://www.instagram.com/shubham_chaipa?igsh=MXFudDM5NHljZjFvcA==/shubham_chaipa" target="_blank" class="contact-btn"><span class="contact-icon">📸</span> Instagram</a>
-          <a href="https://wa.me/qr/BSIUYFJWQH4CN1/7891464270" target="_blank" class="contact-btn"><span class="contact-icon">💬</span> WhatsApp</a>
+            <div class="hero-actions">
+              <a href="#projects" class="btn">View My Work</a>
+              <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+          </div>
+
+          <div class="security-panel">
+            <h3>Profile Snapshot</h3>
+            <div class="scan-line"></div>
+
+            <div class="panel-row">
+              <span>University</span>
+              <span class="status">VIT Bhopal</span>
+            </div>
+
+            <div class="panel-row">
+              <span>Degree</span>
+              <span class="status">B.Tech CSE</span>
+            </div>
+
+            <div class="panel-row">
+              <span>Specialization</span>
+              <span class="status">Cybersecurity & DF</span>
+            </div>
+
+            <div class="panel-row">
+              <span>Availability</span>
+              <span class="status">Internships</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Designed &amp; Built by <span>Shubham Sharma</span> &bull; VIT Bhopal &bull; <span id="year"></span></p>
-    <p style="margin-top:0.25rem;color:rgba(255,255,255,0.15)">Ethically hacking since day one.</p>
-  </footer>
+      <section class="stats">
+        <div class="container stats-grid">
+          <div class="stat">
+            <h3>2+</h3>
+            <p>Years Learning</p>
+          </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+          <div class="stat">
+            <h3>2</h3>
+            <p>Major Projects</p>
+          </div>
+
+          <div class="stat">
+            <h3>10+</h3>
+            <p>Security Tools Mastered</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container split">
+          <div>
+            <div class="section-title">
+              <h2>Who I Am</h2>
+              <p>
+                I am a second-year Computer Science Engineering student specializing in
+                Cybersecurity and Digital Forensics.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <h3>About Me</h3>
+              <p>
+                I am passionate about ethical hacking, penetration testing, and building
+                security tools from scratch.
+              </p>
+              <p>
+                My hands-on experience spans web application security, network analysis,
+                and IoT security through projects that simulate real-world attack and
+                defense scenarios.
+              </p>
+              <p>
+                I am actively seeking cybersecurity internships to sharpen my skills and
+                contribute to meaningful security research.
+              </p>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div>&gt; name: Shubham Sharma</div>
+            <div>&gt; degree: B.Tech CSE</div>
+            <div>&gt; specialization: Cybersecurity & Digital Forensics</div>
+            <div>&gt; university: VIT Bhopal University</div>
+            <div>&gt; year: 2nd Year</div>
+            <div>&gt; focus: Penetration Testing</div>
+            <div>&gt; focus: Ethical Hacking</div>
+            <div>&gt; focus: IoT Security</div>
+            <div>&gt; internship_available: true</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-alt" id="skills">
+        <div class="container">
+          <div class="section-title">
+            <h2>My Arsenal</h2>
+            <p>
+              A focused skill set across offensive security, programming,
+              network analysis, labs, and security research.
+            </p>
+          </div>
+
+          <div class="cards">
+            <div class="card">
+              <div class="icon">01</div>
+              <h3>Security Tools</h3>
+              <p>Tools I use for penetration testing, scanning, analysis, and exploitation labs.</p>
+              <div class="tag-list">
+                <span class="tag">Kali Linux</span>
+                <span class="tag">Burp Suite</span>
+                <span class="tag">Metasploit</span>
+                <span class="tag">Nmap</span>
+                <span class="tag">Wireshark</span>
+                <span class="tag">SQLmap</span>
+                <span class="tag">Gobuster</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">02</div>
+              <h3>Programming</h3>
+              <p>Languages and web technologies I use to build tools, scripts, and interfaces.</p>
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Bash / Shell</span>
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">03</div>
+              <h3>Security Domains</h3>
+              <p>Areas of cybersecurity I am actively learning and applying through projects.</p>
+              <div class="tag-list">
+                <span class="tag">Web App Pentesting</span>
+                <span class="tag">Network Security</span>
+                <span class="tag">IoT Security</span>
+                <span class="tag">Digital Forensics</span>
+                <span class="tag">MQTT Protocol</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">04</div>
+              <h3>Platforms & Labs</h3>
+              <p>Practice environments and platforms I use for hands-on cybersecurity learning.</p>
+              <div class="tag-list">
+                <span class="tag">Metasploitable 2</span>
+                <span class="tag">TryHackMe</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">MySQL Workbench</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">05</div>
+              <h3>Currently Learning</h3>
+              <p>Topics and certifications I am currently working on to strengthen my foundation.</p>
+              <div class="tag-list">
+                <span class="tag">eJPT</span>
+                <span class="tag">CTF Challenges</span>
+                <span class="tag">Malware Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-title">
+            <h2>What I Have Built</h2>
+            <p>
+              Security-focused projects built around ethical research, simulation,
+              monitoring, and practical cybersecurity learning.
+            </p>
+          </div>
+
+          <div class="cards two">
+            <div class="card">
+              <div class="icon">01</div>
+              <h3>BruteForceLab</h3>
+              <p>
+                A brute force simulation framework for studying attack vectors in a
+                controlled, ethical lab environment.
+              </p>
+
+              <div class="project-meta">
+                <span>My Contribution</span>
+                GUI Development & System Integration
+              </div>
+
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">Kali Linux</span>
+                <span class="tag">GUI</span>
+                <span class="tag">Security Research</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon">02</div>
+              <h3>VITGuard</h3>
+              <p>
+                A six-layer IoT security monitoring system with threat detection,
+                monitoring, and incident response simulation.
+              </p>
+
+              <div class="project-meta">
+                <span>My Contribution</span>
+                Victim App Simulation Module & Security Engine
+              </div>
+
+              <div class="tag-list">
+                <span class="tag">IoT</span>
+                <span class="tag">MQTT</span>
+                <span class="tag">Python</span>
+                <span class="tag">Security Engine</span>
+                <span class="tag">Network Monitoring</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-alt" id="certifications">
+        <div class="container">
+          <div class="section-title">
+            <h2>My Credentials</h2>
+            <p>
+              Certifications, labs, and learning tracks connected to cybersecurity,
+              penetration testing, and database fundamentals.
+            </p>
+          </div>
+
+          <div class="cards">
+            <div class="card cert-card">
+              <div class="icon">01</div>
+              <div>
+                <h3>TryHackMe</h3>
+                <p>Penetration Testing Labs</p>
+                <span class="cert-status">Active</span>
+              </div>
+            </div>
+
+            <div class="card cert-card">
+              <div class="icon">02</div>
+              <div>
+                <h3>Google Cybersecurity</h3>
+                <p>Professional Certificate via Coursera</p>
+                <span class="cert-status">Coursera</span>
+              </div>
+            </div>
+
+            <div class="card cert-card">
+              <div class="icon">03</div>
+              <div>
+                <h3>MongoDB</h3>
+                <p>Database Certification from MongoDB University</p>
+                <span class="cert-status">MongoDB University</span>
+              </div>
+            </div>
+
+            <div class="card cert-card">
+              <div class="icon">04</div>
+              <div>
+                <h3>eJPT / CEH</h3>
+                <p>Industry certification preparation</p>
+                <span class="cert-status">In Progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Let’s Connect</h2>
+            <p>
+              I am actively looking for cybersecurity internships. Whether you have an
+              opportunity, want to collaborate on a CTF, or want to talk security, my
+              inbox is open.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a href="mailto:shubham2chaipa1102@gmail.com" class="btn">Email Me</a>
+            <a href="https://github.com/shubham24bcy10391-ux" target="_blank" class="btn secondary">GitHub</a>
+            <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" class="btn secondary">LinkedIn</a>
+            <a href="https://www.instagram.com/shubham_chaipa" target="_blank" class="btn secondary">Instagram</a>
+            <a href="https://wa.me/7891464270" target="_blank" class="btn secondary">WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Designed & Built by <span>Shubham Sharma</span> · VIT Bhopal · 2026
+    </footer>
+  </body>
+  </html>

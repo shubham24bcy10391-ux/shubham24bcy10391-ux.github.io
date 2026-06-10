@@ -1,794 +1,1005 @@
-<!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Shubham Sharma | B.Tech CSE Cybersecurity and Digital Forensics student at VIT Bhopal. Ethical hacker, penetration tester, and security researcher."
-    />
-    <title>Shubham Sharma | Cybersecurity Portfolio</title>
-
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #05070d;
-        color: #ffffff;
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        background: rgba(5, 7, 13, 0.86);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .nav {
-        max-width: 1180px;
-        margin: auto;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-size: 22px;
-        font-weight: 800;
-      }
-
-      .logo span {
-        color: #34f5c5;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 28px;
-        font-size: 14px;
-        color: #c9d3df;
-      }
-
-      .nav-links a:hover {
-        color: #34f5c5;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 13px 22px;
-        border: 1px solid #34f5c5;
-        background: #34f5c5;
-        color: #04100d;
-        font-weight: 700;
-        border-radius: 4px;
-        transition: 0.25s ease;
-        cursor: pointer;
-      }
-
-      .btn:hover {
-        background: transparent;
-        color: #34f5c5;
-      }
-
-      .btn.secondary {
-        background: transparent;
-        color: #ffffff;
-        border-color: rgba(255, 255, 255, 0.25);
-      }
-
-      .btn.secondary:hover {
-        border-color: #34f5c5;
-        color: #34f5c5;
-      }
-
-      .hero {
-        min-height: 100vh;
-        padding: 150px 20px 80px;
-        display: flex;
-        align-items: center;
-        background:
-          linear-gradient(rgba(5, 7, 13, 0.55), rgba(5, 7, 13, 0.94)),
-          url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1800&q=80");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .hero-inner {
-        width: 100%;
-        max-width: 1180px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        color: #34f5c5;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-      }
-
-      h1 {
-        font-size: clamp(44px, 7vw, 88px);
-        line-height: 0.95;
-        max-width: 780px;
-        margin-bottom: 28px;
-      }
-
-      .hero p {
-        max-width: 650px;
-        color: #c6d0dc;
-        font-size: 18px;
-        margin-bottom: 34px;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .security-panel {
-        border: 1px solid rgba(52, 245, 197, 0.32);
-        background: rgba(8, 14, 24, 0.78);
-        border-radius: 8px;
-        padding: 28px;
-        box-shadow: 0 0 60px rgba(52, 245, 197, 0.14);
-      }
-
-      .security-panel h3 {
-        margin-bottom: 20px;
-        font-size: 22px;
-      }
-
-      .scan-line {
-        height: 8px;
-        background: linear-gradient(90deg, transparent, #34f5c5, transparent);
-        margin: 22px 0;
-        animation: scan 2.6s infinite;
-      }
-
-      @keyframes scan {
-        0% {
-          transform: translateY(-8px);
-          opacity: 0.2;
-        }
-
-        50% {
-          opacity: 1;
-        }
-
-        100% {
-          transform: translateY(8px);
-          opacity: 0.2;
-        }
-      }
-
-      .panel-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 14px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-        color: #dce7f2;
-        font-size: 14px;
-      }
-
-      .status {
-        color: #34f5c5;
-        font-weight: 700;
-        white-space: nowrap;
-      }
-
-      section {
-        padding: 95px 20px;
-      }
-
-      .container {
-        max-width: 1180px;
-        margin: auto;
-      }
-
-      .section-title {
-        max-width: 760px;
-        margin-bottom: 46px;
-      }
-
-      .section-title h2 {
-        font-size: clamp(34px, 5vw, 58px);
-        line-height: 1.05;
-        margin-bottom: 18px;
-      }
-
-      .section-title p {
-        color: #aebccd;
-        font-size: 17px;
-      }
-
-      .stats {
-        background: #0a111d;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-
-      .stat h3 {
-        color: #34f5c5;
-        font-size: 42px;
-        margin-bottom: 6px;
-      }
-
-      .stat p {
-        color: #aebccd;
-      }
-
-      .split {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 60px;
-        align-items: center;
-      }
-
-      .about-card {
-        background: #060a12;
-        border: 1px solid rgba(52, 245, 197, 0.25);
-        border-radius: 8px;
-        padding: 28px;
-        color: #dce7f2;
-      }
-
-      .about-card h3 {
-        color: #34f5c5;
-        margin-bottom: 18px;
-      }
-
-      .about-card p {
-        margin-bottom: 14px;
-        color: #c4cedb;
-      }
-
-      .info-list {
-        display: grid;
-        gap: 14px;
-        margin-top: 22px;
-      }
-
-      .info-list div {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-        color: #cbd6e3;
-      }
-
-      .info-list strong {
-        color: #ffffff;
-      }
-
-      .terminal {
-        background: #060a12;
-        border: 1px solid rgba(52, 245, 197, 0.25);
-        border-radius: 8px;
-        padding: 28px;
-        font-family: Consolas, monospace;
-        color: #9fffe8;
-        min-height: 340px;
-        overflow-x: auto;
-      }
-
-      .terminal div {
-        margin-bottom: 14px;
-      }
-
-      .section-alt {
-        background: #0a111d;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-      }
-
-      .cards.two {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .card {
-        background: #0b1220;
-        border: 1px solid rgba(255, 255, 255, 0.09);
-        border-radius: 8px;
-        padding: 30px;
-        transition: 0.25s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(52, 245, 197, 0.55);
-      }
-
-      .icon {
-        width: 48px;
-        height: 48px;
-        display: grid;
-        place-items: center;
-        background: rgba(52, 245, 197, 0.12);
-        color: #34f5c5;
-        border-radius: 6px;
-        font-size: 24px;
-        margin-bottom: 22px;
-      }
-
-      .card h3 {
-        font-size: 22px;
-        margin-bottom: 14px;
-      }
-
-      .card p {
-        color: #aebccd;
-        margin-bottom: 18px;
-      }
-
-      .tag-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .tag {
-        padding: 8px 11px;
-        border-radius: 4px;
-        background: rgba(52, 245, 197, 0.1);
-        color: #bfffee;
-        border: 1px solid rgba(52, 245, 197, 0.2);
-        font-size: 13px;
-      }
-
-      .project-meta {
-        margin: 18px 0;
-        padding: 16px;
-        background: rgba(255, 255, 255, 0.04);
-        border-radius: 6px;
-        color: #dce7f2;
-      }
-
-      .project-meta span {
-        display: block;
-        color: #34f5c5;
-        font-weight: 700;
-        margin-bottom: 4px;
-        font-size: 13px;
-        text-transform: uppercase;
-      }
-
-      .cert-card {
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-      }
-
-      .cert-status {
-        display: inline-block;
-        margin-top: 10px;
-        color: #34f5c5;
-        font-weight: 700;
-        font-size: 14px;
-      }
-
-      .contact {
-        background:
-          linear-gradient(rgba(5, 7, 13, 0.88), rgba(5, 7, 13, 0.95)),
-          url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 30px;
-      }
-
-      footer {
-        padding: 28px 20px;
-        text-align: center;
-        color: #8996a8;
-        background: #05070d;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      footer span {
-        color: #34f5c5;
-      }
-
-      @media (max-width: 900px) {
-        .hero-inner,
-        .split,
-        .cards,
-        .cards.two,
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-links {
-          display: none;
-        }
-
-        .security-panel {
-          margin-top: 20px;
-        }
-
-        .info-list div {
-          flex-direction: column;
-          gap: 4px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <nav class="nav">
-        <a href="#home" class="logo">Shubham<span>Security</span></a>
-
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <a href="#contact" class="btn">Contact Me</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" id="home">
-        <div class="hero-inner">
-          <div>
-            <div class="eyebrow">Cybersecurity Portfolio</div>
-            <h1>Shubham Sharma</h1>
-            <p>
-              Ethical hacker, penetration tester, and security researcher pursuing
-              B.Tech CSE in Cybersecurity and Digital Forensics at VIT Bhopal University.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn">View My Work</a>
-              <a href="#contact" class="btn secondary">Get In Touch</a>
-            </div>
-          </div>
-
-          <div class="security-panel">
-            <h3>Profile Snapshot</h3>
-            <div class="scan-line"></div>
-
-            <div class="panel-row">
-              <span>University</span>
-              <span class="status">VIT Bhopal</span>
-            </div>
-
-            <div class="panel-row">
-              <span>Degree</span>
-              <span class="status">B.Tech CSE</span>
-            </div>
-
-            <div class="panel-row">
-              <span>Specialization</span>
-              <span class="status">Cybersecurity & DF</span>
-            </div>
-
-            <div class="panel-row">
-              <span>Availability</span>
-              <span class="status">Internships</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="container stats-grid">
-          <div class="stat">
-            <h3>2+</h3>
-            <p>Years Learning</p>
-          </div>
-
-          <div class="stat">
-            <h3>2</h3>
-            <p>Major Projects</p>
-          </div>
-
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Security Tools Mastered</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <div class="container split">
-          <div>
-            <div class="section-title">
-              <h2>Who I Am</h2>
-              <p>
-                I am a second-year Computer Science Engineering student specializing in
-                Cybersecurity and Digital Forensics.
-              </p>
-            </div>
-
-            <div class="about-card">
-              <h3>About Me</h3>
-              <p>
-                I am passionate about ethical hacking, penetration testing, and building
-                security tools from scratch.
-              </p>
-              <p>
-                My hands-on experience spans web application security, network analysis,
-                and IoT security through projects that simulate real-world attack and
-                defense scenarios.
-              </p>
-              <p>
-                I am actively seeking cybersecurity internships to sharpen my skills and
-                contribute to meaningful security research.
-              </p>
-            </div>
-          </div>
-
-          <div class="terminal">
-            <div>&gt; name: Shubham Sharma</div>
-            <div>&gt; degree: B.Tech CSE</div>
-            <div>&gt; specialization: Cybersecurity & Digital Forensics</div>
-            <div>&gt; university: VIT Bhopal University</div>
-            <div>&gt; year: 2nd Year</div>
-            <div>&gt; focus: Penetration Testing</div>
-            <div>&gt; focus: Ethical Hacking</div>
-            <div>&gt; focus: IoT Security</div>
-            <div>&gt; internship_available: true</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-alt" id="skills">
-        <div class="container">
-          <div class="section-title">
-            <h2>My Arsenal</h2>
-            <p>
-              A focused skill set across offensive security, programming,
-              network analysis, labs, and security research.
-            </p>
-          </div>
-
-          <div class="cards">
-            <div class="card">
-              <div class="icon">01</div>
-              <h3>Security Tools</h3>
-              <p>Tools I use for penetration testing, scanning, analysis, and exploitation labs.</p>
-              <div class="tag-list">
-                <span class="tag">Kali Linux</span>
-                <span class="tag">Burp Suite</span>
-                <span class="tag">Metasploit</span>
-                <span class="tag">Nmap</span>
-                <span class="tag">Wireshark</span>
-                <span class="tag">SQLmap</span>
-                <span class="tag">Gobuster</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">02</div>
-              <h3>Programming</h3>
-              <p>Languages and web technologies I use to build tools, scripts, and interfaces.</p>
-              <div class="tag-list">
-                <span class="tag">Python</span>
-                <span class="tag">Java</span>
-                <span class="tag">SQL</span>
-                <span class="tag">Bash / Shell</span>
-                <span class="tag">HTML / CSS</span>
-                <span class="tag">JavaScript</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">03</div>
-              <h3>Security Domains</h3>
-              <p>Areas of cybersecurity I am actively learning and applying through projects.</p>
-              <div class="tag-list">
-                <span class="tag">Web App Pentesting</span>
-                <span class="tag">Network Security</span>
-                <span class="tag">IoT Security</span>
-                <span class="tag">Digital Forensics</span>
-                <span class="tag">MQTT Protocol</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">04</div>
-              <h3>Platforms & Labs</h3>
-              <p>Practice environments and platforms I use for hands-on cybersecurity learning.</p>
-              <div class="tag-list">
-                <span class="tag">Metasploitable 2</span>
-                <span class="tag">TryHackMe</span>
-                <span class="tag">GitHub</span>
-                <span class="tag">MySQL Workbench</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">05</div>
-              <h3>Currently Learning</h3>
-              <p>Topics and certifications I am currently working on to strengthen my foundation.</p>
-              <div class="tag-list">
-                <span class="tag">eJPT</span>
-                <span class="tag">CTF Challenges</span>
-                <span class="tag">Malware Analysis</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="container">
-          <div class="section-title">
-            <h2>What I Have Built</h2>
-            <p>
-              Security-focused projects built around ethical research, simulation,
-              monitoring, and practical cybersecurity learning.
-            </p>
-          </div>
-
-          <div class="cards two">
-            <div class="card">
-              <div class="icon">01</div>
-              <h3>BruteForceLab</h3>
-              <p>
-                A brute force simulation framework for studying attack vectors in a
-                controlled, ethical lab environment.
-              </p>
-
-              <div class="project-meta">
-                <span>My Contribution</span>
-                GUI Development & System Integration
-              </div>
-
-              <div class="tag-list">
-                <span class="tag">Python</span>
-                <span class="tag">Kali Linux</span>
-                <span class="tag">GUI</span>
-                <span class="tag">Security Research</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">02</div>
-              <h3>VITGuard</h3>
-              <p>
-                A six-layer IoT security monitoring system with threat detection,
-                monitoring, and incident response simulation.
-              </p>
-
-              <div class="project-meta">
-                <span>My Contribution</span>
-                Victim App Simulation Module & Security Engine
-              </div>
-
-              <div class="tag-list">
-                <span class="tag">IoT</span>
-                <span class="tag">MQTT</span>
-                <span class="tag">Python</span>
-                <span class="tag">Security Engine</span>
-                <span class="tag">Network Monitoring</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-alt" id="certifications">
-        <div class="container">
-          <div class="section-title">
-            <h2>My Credentials</h2>
-            <p>
-              Certifications, labs, and learning tracks connected to cybersecurity,
-              penetration testing, and database fundamentals.
-            </p>
-          </div>
-
-          <div class="cards">
-            <div class="card cert-card">
-              <div class="icon">01</div>
-              <div>
-                <h3>TryHackMe</h3>
-                <p>Penetration Testing Labs</p>
-                <span class="cert-status">Active</span>
-              </div>
-            </div>
-
-            <div class="card cert-card">
-              <div class="icon">02</div>
-              <div>
-                <h3>Google Cybersecurity</h3>
-                <p>Professional Certificate via Coursera</p>
-                <span class="cert-status">Coursera</span>
-              </div>
-            </div>
-
-            <div class="card cert-card">
-              <div class="icon">03</div>
-              <div>
-                <h3>MongoDB</h3>
-                <p>Database Certification from MongoDB University</p>
-                <span class="cert-status">MongoDB University</span>
-              </div>
-            </div>
-
-            <div class="card cert-card">
-              <div class="icon">04</div>
-              <div>
-                <h3>eJPT / CEH</h3>
-                <p>Industry certification preparation</p>
-                <span class="cert-status">In Progress</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact" id="contact">
-        <div class="container">
-          <div class="section-title">
-            <h2>Let’s Connect</h2>
-            <p>
-              I am actively looking for cybersecurity internships. Whether you have an
-              opportunity, want to collaborate on a CTF, or want to talk security, my
-              inbox is open.
-            </p>
-          </div>
-
-          <div class="contact-links">
-            <a href="mailto:shubham2chaipa1102@gmail.com" class="btn">Email Me</a>
-            <a href="https://github.com/shubham24bcy10391-ux" target="_blank" class="btn secondary">GitHub</a>
-            <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" class="btn secondary">LinkedIn</a>
-            <a href="https://www.instagram.com/shubham_chaipa" target="_blank" class="btn secondary">Instagram</a>
-            <a href="https://wa.me/7891464270" target="_blank" class="btn secondary">WhatsApp</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      Designed & Built by <span>Shubham Sharma</span> · VIT Bhopal · 2026
-    </footer>
-  </body>
-  </html>
+ 1 +<!DOCTYPE html>
+       2 +<html lang="en">
+       3 +<head>
+       4 +  <meta charset="UTF-8" />
+       5 +  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       6 +  <meta
+       7 +    name="description"
+       8 +    content="Shubham Sharma is a B.Tech CSE Cybersecurity and Digital Forensics student at VIT Bhopal focused on ethical hacking, penetration testing, IoT security, and digital forensics."
+       9 +  />
+      10 +  <meta property="og:title" content="Shubham Sharma | Cybersecurity Portfolio" />
+      11 +  <meta property="og:description" content="Cybersecurity student focused on ethical hacking, penetration testing, IoT security, and practical security projects." />
+      12 +  <meta property="og:type" content="website" />
+      13 +  <meta property="og:url" content="https://shubhamchaipa.me/" />
+      14 +  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=70" />
+      15 +  <meta name="theme-color" content="#05070d" />
+      16 +  <link rel="preconnect" href="https://images.unsplash.com" />
+      17 +  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70" />
+      18 +  <title>Shubham Sharma | Cybersecurity Portfolio</title>
+      19 +
+      20 +  <style>
+      21 +    * {
+      22 +      box-sizing: border-box;
+      23 +      margin: 0;
+      24 +      padding: 0;
+      25 +    }
+      26 +
+      27 +    html {
+      28 +      scroll-behavior: smooth;
+      29 +    }
+      30 +
+      31 +    body {
+      32 +      font-family: Arial, Helvetica, sans-serif;
+      33 +      background: #05070d;
+      34 +      color: #ffffff;
+      35 +      line-height: 1.6;
+      36 +    }
+      37 +
+      38 +    a {
+      39 +      color: inherit;
+      40 +      text-decoration: none;
+      41 +    }
+      42 +
+      43 +    img {
+      44 +      display: block;
+      45 +      max-width: 100%;
+      46 +    }
+      47 +
+      48 +    header {
+      49 +      position: fixed;
+      50 +      top: 0;
+      51 +      left: 0;
+      52 +      width: 100%;
+      53 +      z-index: 20;
+      54 +      background: rgba(5, 7, 13, 0.88);
+      55 +      backdrop-filter: blur(14px);
+      56 +      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      57 +    }
+      58 +
+      59 +    .nav {
+      60 +      max-width: 1180px;
+      61 +      margin: auto;
+      62 +      padding: 18px 20px;
+      63 +      display: flex;
+      64 +      align-items: center;
+      65 +      justify-content: space-between;
+      66 +      gap: 18px;
+      67 +    }
+      68 +
+      69 +    .logo {
+      70 +      font-size: 21px;
+      71 +      font-weight: 800;
+      72 +      white-space: nowrap;
+      73 +    }
+      74 +
+      75 +    .logo span {
+      76 +      color: #34f5c5;
+      77 +    }
+      78 +
+      79 +    .nav-links {
+      80 +      display: flex;
+      81 +      gap: 26px;
+      82 +      font-size: 14px;
+      83 +      color: #c9d3df;
+      84 +    }
+      85 +
+      86 +    .nav-links a:hover,
+      87 +    .nav-links a:focus-visible {
+      88 +      color: #34f5c5;
+      89 +    }
+      90 +
+      91 +    .menu-toggle {
+      92 +      display: none;
+      93 +    }
+      94 +
+      95 +    .menu-button {
+      96 +      display: none;
+      97 +      width: 42px;
+      98 +      height: 42px;
+      99 +      border: 1px solid rgba(255, 255, 255, 0.22);
+     100 +      border-radius: 6px;
+     101 +      background: transparent;
+     102 +      cursor: pointer;
+     103 +      position: relative;
+     104 +    }
+     105 +
+     106 +    .menu-button span,
+     107 +    .menu-button::before,
+     108 +    .menu-button::after {
+     109 +      content: "";
+     110 +      position: absolute;
+     111 +      left: 10px;
+     112 +      right: 10px;
+     113 +      height: 2px;
+     114 +      background: #ffffff;
+     115 +      transition: 0.25s ease;
+     116 +    }
+     117 +
+     118 +    .menu-button span {
+     119 +      top: 20px;
+     120 +    }
+     121 +
+     122 +    .menu-button::before {
+     123 +      top: 13px;
+     124 +    }
+     125 +
+     126 +    .menu-button::after {
+     127 +      top: 27px;
+     128 +    }
+     129 +
+     130 +    .btn {
+     131 +      display: inline-flex;
+     132 +      align-items: center;
+     133 +      justify-content: center;
+     134 +      min-height: 46px;
+     135 +      padding: 12px 20px;
+     136 +      border: 1px solid #34f5c5;
+     137 +      background: #34f5c5;
+     138 +      color: #04100d;
+     139 +      font-weight: 700;
+     140 +      border-radius: 4px;
+     141 +      transition: 0.25s ease;
+     142 +      cursor: pointer;
+     143 +    }
+     144 +
+     145 +    .btn:hover,
+     146 +    .btn:focus-visible {
+     147 +      background: transparent;
+     148 +      color: #34f5c5;
+     149 +    }
+     150 +
+     151 +    .btn.secondary {
+     152 +      background: transparent;
+     153 +      color: #ffffff;
+     154 +      border-color: rgba(255, 255, 255, 0.25);
+     155 +    }
+     156 +
+     157 +    .btn.secondary:hover,
+     158 +    .btn.secondary:focus-visible {
+     159 +      border-color: #34f5c5;
+     160 +      color: #34f5c5;
+     161 +    }
+     162 +
+     163 +    .hero {
+     164 +      min-height: 100vh;
+     165 +      padding: 145px 20px 80px;
+     166 +      display: flex;
+     167 +      align-items: center;
+     168 +      background:
+     169 +        linear-gradient(rgba(5, 7, 13, 0.55), rgba(5, 7, 13, 0.94)),
+     170 +        url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70");
+     171 +      background-size: cover;
+     172 +      background-position: center;
+     173 +    }
+     174 +
+     175 +    .hero-inner {
+     176 +      width: 100%;
+     177 +      max-width: 1180px;
+     178 +      margin: auto;
+     179 +      display: grid;
+     180 +      grid-template-columns: 1.1fr 0.9fr;
+     181 +      gap: 60px;
+     182 +      align-items: center;
+     183 +    }
+     184 +
+     185 +    .eyebrow {
+     186 +      color: #34f5c5;
+     187 +      font-size: 14px;
+     188 +      font-weight: 700;
+     189 +      text-transform: uppercase;
+     190 +      margin-bottom: 18px;
+     191 +    }
+     192 +
+     193 +    h1 {
+     194 +      font-size: clamp(44px, 7vw, 88px);
+     195 +      line-height: 0.95;
+     196 +      max-width: 780px;
+     197 +      margin-bottom: 22px;
+     198 +    }
+     199 +
+     200 +    .hero p {
+     201 +      max-width: 650px;
+     202 +      color: #c6d0dc;
+     203 +      font-size: 18px;
+     204 +      margin-bottom: 30px;
+     205 +    }
+     206 +
+     207 +    .hero-actions,
+     208 +    .quick-links {
+     209 +      display: flex;
+     210 +      gap: 14px;
+     211 +      flex-wrap: wrap;
+     212 +    }
+     213 +
+     214 +    .quick-links {
+     215 +      margin-top: 18px;
+     216 +      color: #aebccd;
+     217 +      font-size: 14px;
+     218 +    }
+     219 +
+     220 +    .quick-links a {
+     221 +      border-bottom: 1px solid rgba(52, 245, 197, 0.5);
+     222 +    }
+     223 +
+     224 +    .security-panel {
+     225 +      border: 1px solid rgba(52, 245, 197, 0.32);
+     226 +      background: rgba(8, 14, 24, 0.8);
+     227 +      border-radius: 8px;
+     228 +      padding: 28px;
+     229 +      box-shadow: 0 0 60px rgba(52, 245, 197, 0.14);
+     230 +    }
+     231 +
+     232 +    .security-panel h3 {
+     233 +      margin-bottom: 20px;
+     234 +      font-size: 22px;
+     235 +    }
+     236 +
+     237 +    .scan-line {
+     238 +      height: 8px;
+     239 +      background: linear-gradient(90deg, transparent, #34f5c5, transparent);
+     240 +      margin: 22px 0;
+     241 +      animation: scan 2.6s infinite;
+     242 +    }
+     243 +
+     244 +    @keyframes scan {
+     245 +      0% {
+     246 +        transform: translateY(-8px);
+     247 +        opacity: 0.2;
+     248 +      }
+     249 +
+     250 +      50% {
+     251 +        opacity: 1;
+     252 +      }
+     253 +
+     254 +      100% {
+     255 +        transform: translateY(8px);
+     256 +        opacity: 0.2;
+     257 +      }
+     258 +    }
+     259 +
+     260 +    .panel-row {
+     261 +      display: flex;
+     262 +      justify-content: space-between;
+     263 +      gap: 20px;
+     264 +      padding: 14px 0;
+     265 +      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+     266 +      color: #dce7f2;
+     267 +      font-size: 14px;
+     268 +    }
+     269 +
+     270 +    .status {
+     271 +      color: #34f5c5;
+     272 +      font-weight: 700;
+     273 +      white-space: nowrap;
+     274 +    }
+     275 +
+     276 +    section {
+     277 +      padding: 92px 20px;
+     278 +    }
+     279 +
+     280 +    .container {
+     281 +      max-width: 1180px;
+     282 +      margin: auto;
+     283 +    }
+     284 +
+     285 +    .section-title {
+     286 +      max-width: 760px;
+     287 +      margin-bottom: 44px;
+     288 +    }
+     289 +
+     290 +    .section-title h2 {
+     291 +      font-size: clamp(34px, 5vw, 58px);
+     292 +      line-height: 1.05;
+     293 +      margin-bottom: 18px;
+     294 +    }
+     295 +
+     296 +    .section-title p {
+     297 +      color: #aebccd;
+     298 +      font-size: 17px;
+     299 +    }
+     300 +
+     301 +    .stats {
+     302 +      background: #0a111d;
+     303 +      border-top: 1px solid rgba(255, 255, 255, 0.08);
+     304 +      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+     305 +    }
+     306 +
+     307 +    .stats-grid {
+     308 +      display: grid;
+     309 +      grid-template-columns: repeat(3, 1fr);
+     310 +      gap: 24px;
+     311 +    }
+     312 +
+     313 +    .stat h3 {
+     314 +      color: #34f5c5;
+     315 +      font-size: 42px;
+     316 +      margin-bottom: 6px;
+     317 +    }
+     318 +
+     319 +    .stat p {
+     320 +      color: #aebccd;
+     321 +    }
+     322 +
+     323 +    .split {
+     324 +      display: grid;
+     325 +      grid-template-columns: 0.9fr 1.1fr;
+     326 +      gap: 60px;
+     327 +      align-items: center;
+     328 +    }
+     329 +
+     330 +    .about-card,
+     331 +    .terminal {
+     332 +      background: #060a12;
+     333 +      border: 1px solid rgba(52, 245, 197, 0.25);
+     334 +      border-radius: 8px;
+     335 +      padding: 28px;
+     336 +    }
+     337 +
+     338 +    .about-card {
+     339 +      color: #dce7f2;
+     340 +    }
+     341 +
+     342 +    .about-card h3 {
+     343 +      color: #34f5c5;
+     344 +      margin-bottom: 18px;
+     345 +    }
+     346 +
+     347 +    .about-card p {
+     348 +      margin-bottom: 14px;
+     349 +      color: #c4cedb;
+     350 +    }
+     351 +
+     352 +    .terminal {
+     353 +      font-family: Consolas, "Courier New", monospace;
+     354 +      color: #9fffe8;
+     355 +      min-height: 340px;
+     356 +      overflow-x: auto;
+     357 +    }
+     358 +
+     359 +    .terminal div {
+     360 +      margin-bottom: 14px;
+     361 +      white-space: nowrap;
+     362 +    }
+     363 +
+     364 +    .section-alt {
+     365 +      background: #0a111d;
+     366 +    }
+     367 +
+     368 +    .cards {
+     369 +      display: grid;
+     370 +      grid-template-columns: repeat(3, 1fr);
+     371 +      gap: 22px;
+     372 +    }
+     373 +
+     374 +    .cards.two {
+     375 +      grid-template-columns: repeat(2, 1fr);
+     376 +    }
+     377 +
+     378 +    .card {
+     379 +      background: #0b1220;
+     380 +      border: 1px solid rgba(255, 255, 255, 0.09);
+     381 +      border-radius: 8px;
+     382 +      padding: 28px;
+     383 +      transition: 0.25s ease;
+     384 +    }
+     385 +
+     386 +    .card:hover {
+     387 +      transform: translateY(-6px);
+     388 +      border-color: rgba(52, 245, 197, 0.55);
+     389 +    }
+     390 +
+     391 +    .icon {
+     392 +      width: 48px;
+     393 +      height: 48px;
+     394 +      display: grid;
+     395 +      place-items: center;
+     396 +      background: rgba(52, 245, 197, 0.12);
+     397 +      color: #34f5c5;
+     398 +      border-radius: 6px;
+     399 +      font-size: 14px;
+     400 +      font-weight: 800;
+     401 +      margin-bottom: 22px;
+     402 +    }
+     403 +
+     404 +    .card h3 {
+     405 +      font-size: 22px;
+     406 +      margin-bottom: 14px;
+     407 +    }
+     408 +
+     409 +    .card p {
+     410 +      color: #aebccd;
+     411 +      margin-bottom: 18px;
+     412 +    }
+     413 +
+     414 +    .project-card {
+     415 +      padding: 0;
+     416 +      overflow: hidden;
+     417 +    }
+     418 +
+     419 +    .project-image {
+     420 +      width: 100%;
+     421 +      aspect-ratio: 16 / 9;
+     422 +      object-fit: cover;
+     423 +      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+     424 +    }
+     425 +
+     426 +    .project-body {
+     427 +      padding: 28px;
+     428 +    }
+     429 +
+     430 +    .tag-list {
+     431 +      display: flex;
+     432 +      flex-wrap: wrap;
+     433 +      gap: 10px;
+     434 +      margin-top: 18px;
+     435 +    }
+     436 +
+     437 +    .tag {
+     438 +      padding: 8px 11px;
+     439 +      border-radius: 4px;
+     440 +      background: rgba(52, 245, 197, 0.1);
+     441 +      color: #bfffee;
+     442 +      border: 1px solid rgba(52, 245, 197, 0.2);
+     443 +      font-size: 13px;
+     444 +    }
+     445 +
+     446 +    .project-meta {
+     447 +      margin: 18px 0;
+     448 +      padding: 16px;
+     449 +      background: rgba(255, 255, 255, 0.04);
+     450 +      border-radius: 6px;
+     451 +      color: #dce7f2;
+     452 +    }
+     453 +
+     454 +    .project-meta span {
+     455 +      display: block;
+     456 +      color: #34f5c5;
+     457 +      font-weight: 700;
+     458 +      margin-bottom: 4px;
+     459 +      font-size: 13px;
+     460 +      text-transform: uppercase;
+     461 +    }
+     462 +
+     463 +    .card-actions {
+     464 +      display: flex;
+     465 +      flex-wrap: wrap;
+     466 +      gap: 12px;
+     467 +      margin-top: 22px;
+     468 +    }
+     469 +
+     470 +    .small-btn {
+     471 +      min-height: 40px;
+     472 +      padding: 9px 14px;
+     473 +      font-size: 14px;
+     474 +    }
+     475 +
+     476 +    .cert-card {
+     477 +      display: flex;
+     478 +      gap: 18px;
+     479 +      align-items: flex-start;
+     480 +    }
+     481 +
+     482 +    .cert-status {
+     483 +      display: inline-block;
+     484 +      margin-top: 10px;
+     485 +      color: #34f5c5;
+     486 +      font-weight: 700;
+     487 +      font-size: 14px;
+     488 +    }
+     489 +
+     490 +    .contact {
+     491 +      background:
+     492 +        linear-gradient(rgba(5, 7, 13, 0.88), rgba(5, 7, 13, 0.95)),
+     493 +        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=70");
+     494 +      background-size: cover;
+     495 +      background-position: center;
+     496 +    }
+     497 +
+     498 +    .contact-links {
+     499 +      display: flex;
+     500 +      flex-wrap: wrap;
+     501 +      gap: 14px;
+     502 +      margin-top: 30px;
+     503 +    }
+     504 +
+     505 +    footer {
+     506 +      padding: 28px 20px;
+     507 +      text-align: center;
+     508 +      color: #8996a8;
+     509 +      background: #05070d;
+     510 +      border-top: 1px solid rgba(255, 255, 255, 0.08);
+     511 +    }
+     512 +
+     513 +    footer span {
+     514 +      color: #34f5c5;
+     515 +    }
+     516 +
+     517 +    @media (max-width: 900px) {
+     518 +      .hero-inner,
+     519 +      .split,
+     520 +      .cards,
+     521 +      .cards.two,
+     522 +      .stats-grid {
+     523 +        grid-template-columns: 1fr;
+     524 +      }
+     525 +
+     526 +      .nav {
+     527 +        flex-wrap: wrap;
+     528 +      }
+     529 +
+     530 +      .menu-button {
+     531 +        display: block;
+     532 +      }
+     533 +
+     534 +      .nav > .btn {
+     535 +        display: none;
+     536 +      }
+     537 +
+     538 +      .nav-links {
+     539 +        display: none;
+     540 +        width: 100%;
+     541 +        padding: 16px 0 4px;
+     542 +        flex-direction: column;
+     543 +        gap: 12px;
+     544 +      }
+     545 +
+     546 +      .nav-links a {
+     547 +        padding: 10px 0;
+     548 +        border-top: 1px solid rgba(255, 255, 255, 0.08);
+     549 +      }
+     550 +
+     551 +      .menu-toggle:checked ~ .menu-button span {
+     552 +        opacity: 0;
+     553 +      }
+     554 +
+     555 +      .menu-toggle:checked ~ .menu-button::before {
+     556 +        top: 20px;
+     557 +        transform: rotate(45deg);
+     558 +      }
+     559 +
+     560 +      .menu-toggle:checked ~ .menu-button::after {
+     561 +        top: 20px;
+     562 +        transform: rotate(-45deg);
+     563 +      }
+     564 +
+     565 +      .menu-toggle:checked ~ .nav-links {
+     566 +        display: flex;
+     567 +      }
+     568 +
+     569 +      .security-panel {
+     570 +        margin-top: 20px;
+     571 +      }
+     572 +
+     573 +      .hero {
+     574 +        min-height: auto;
+     575 +        padding-top: 125px;
+     576 +      }
+     577 +    }
+     578 +
+     579 +    @media (max-width: 560px) {
+     580 +      section {
+     581 +        padding: 72px 18px;
+     582 +      }
+     583 +
+     584 +      .hero {
+     585 +        padding-left: 18px;
+     586 +        padding-right: 18px;
+     587 +      }
+     588 +
+     589 +      h1 {
+     590 +        font-size: 46px;
+     591 +      }
+     592 +
+     593 +      .btn {
+     594 +        width: 100%;
+     595 +      }
+     596 +
+     597 +      .quick-links .btn,
+     598 +      .card-actions .btn,
+     599 +      .contact-links .btn {
+     600 +        width: auto;
+     601 +      }
+     602 +
+     603 +      .panel-row {
+     604 +        flex-direction: column;
+     605 +        gap: 4px;
+     606 +      }
+     607 +
+     608 +      .cert-card {
+     609 +        flex-direction: column;
+     610 +      }
+     611 +    }
+     612 +  </style>
+     613 +</head>
+     614 +
+     615 +<body>
+     616 +  <header>
+     617 +    <nav class="nav">
+     618 +      <a href="#home" class="logo">Shubham<span>Security</span></a>
+     619 +
+     620 +      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Open navigation menu" />
+     621 +      <label class="menu-button" for="menu-toggle" aria-hidden="true">
+     622 +        <span></span>
+     623 +      </label>
+     624 +
+     625 +      <div class="nav-links">
+     626 +        <a href="#about">About</a>
+     627 +        <a href="#skills">Skills</a>
+     628 +        <a href="#projects">Projects</a>
+     629 +        <a href="#certifications">Certifications</a>
+     630 +        <a href="#contact">Contact</a>
+     631 +      </div>
+     632 +
+     633 +      <a href="#contact" class="btn">Contact Me</a>
+     634 +    </nav>
+     635 +  </header>
+     636 +
+     637 +  <main>
+     638 +    <section class="hero" id="home">
+     639 +      <div class="hero-inner">
+     640 +        <div>
+     641 +          <div class="eyebrow">Cybersecurity Portfolio</div>
+     642 +          <h1>Shubham Sharma</h1>
+     643 +          <p>
+     644 +            B.Tech CSE student specializing in Cybersecurity and Digital Forensics at VIT Bhopal,
+     645 +            focused on ethical hacking, penetration testing, IoT security, and practical security research.
+     646 +          </p>
+     647 +
+     648 +          <div class="hero-actions">
+     649 +            <a href="#projects" class="btn">View Security Projects</a>
+     650 +            <a href="Shubham-Sharma-Resume.pdf" class="btn secondary" download>Download Resume</a>
+     651 +          </div>
+     652 +
+     653 +          <div class="quick-links">
+     654 +            <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer">GitHub</a>
+     655 +            <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+     656 +            <a href="#contact">Open to Internships</a>
+     657 +          </div>
+     658 +        </div>
+     659 +
+     660 +        <div class="security-panel">
+     661 +          <h3>Profile Snapshot</h3>
+     662 +          <div class="scan-line"></div>
+     663 +
+     664 +          <div class="panel-row">
+     665 +            <span>University</span>
+     666 +            <span class="status">VIT Bhopal</span>
+     667 +          </div>
+     668 +
+     669 +          <div class="panel-row">
+     670 +            <span>Degree</span>
+     671 +            <span class="status">B.Tech CSE</span>
+     672 +          </div>
+     673 +
+     674 +          <div class="panel-row">
+     675 +            <span>Specialization</span>
+     676 +            <span class="status">Cybersecurity & DF</span>
+     677 +          </div>
+     678 +
+     679 +          <div class="panel-row">
+     680 +            <span>Current Focus</span>
+     681 +            <span class="status">Pentesting</span>
+     682 +          </div>
+     683 +
+     684 +          <div class="panel-row">
+     685 +            <span>Availability</span>
+     686 +            <span class="status">Internships</span>
+     687 +          </div>
+     688 +        </div>
+     689 +      </div>
+     690 +    </section>
+     691 +
+     692 +    <section class="stats">
+     693 +      <div class="container stats-grid">
+     694 +        <div class="stat">
+     695 +          <h3>2+</h3>
+     696 +          <p>Years of Cybersecurity Learning</p>
+     697 +        </div>
+     698 +
+     699 +        <div class="stat">
+     700 +          <h3>2</h3>
+     701 +          <p>Security Projects Built</p>
+     702 +        </div>
+     703 +
+     704 +        <div class="stat">
+     705 +          <h3>10+</h3>
+     706 +          <p>Security Tools Practiced</p>
+     707 +        </div>
+     708 +      </div>
+     709 +    </section>
+     710 +
+     711 +    <section id="about">
+     712 +      <div class="container split">
+     713 +        <div>
+     714 +          <div class="section-title">
+     715 +            <h2>About Me</h2>
+     716 +            <p>
+     717 +              I am building a strong practical foundation in offensive security, network analysis,
+     718 +              IoT security, and digital forensics.
+     719 +            </p>
+     720 +          </div>
+     721 +
+     722 +          <div class="about-card">
+     723 +            <h3>Cybersecurity Student & Security Builder</h3>
+     724 +            <p>
+     725 +              I am a second-year Computer Science Engineering student specializing in Cybersecurity
+     726 +              and Digital Forensics at VIT Bhopal University.
+     727 +            </p>
+     728 +            <p>
+     729 +              My work focuses on ethical hacking, penetration testing labs, web application security,
+     730 +              network traffic analysis, and IoT security simulations.
+     731 +            </p>
+     732 +            <p>
+     733 +              I am actively looking for cybersecurity internships where I can contribute to security
+     734 +              testing, research, automation, and defensive monitoring projects.
+     735 +            </p>
+     736 +          </div>
+     737 +        </div>
+     738 +
+     739 +        <div class="terminal">
+     740 +          <div>&gt; name: Shubham Sharma</div>
+     741 +          <div>&gt; degree: B.Tech CSE</div>
+     742 +          <div>&gt; specialization: Cybersecurity & Digital Forensics</div>
+     743 +          <div>&gt; university: VIT Bhopal University</div>
+     744 +          <div>&gt; year: 2nd Year</div>
+     745 +          <div>&gt; focus: Penetration Testing</div>
+     746 +          <div>&gt; focus: IoT Security</div>
+     747 +          <div>&gt; focus: Digital Forensics</div>
+     748 +          <div>&gt; internship_available: true</div>
+     749 +        </div>
+     750 +      </div>
+     751 +    </section>
+     752 +
+     753 +    <section class="section-alt" id="skills">
+     754 +      <div class="container">
+     755 +        <div class="section-title">
+     756 +          <h2>Technical Skills</h2>
+     757 +          <p>
+     758 +            A focused skill set across offensive security, programming, network analysis,
+     759 +            cybersecurity labs, and security research.
+     760 +          </p>
+     761 +        </div>
+     762 +
+     763 +        <div class="cards">
+     764 +          <div class="card">
+     765 +            <div class="icon">SEC</div>
+     766 +            <h3>Security Tools</h3>
+     767 +            <p>Tools I use for penetration testing, scanning, analysis, and exploitation labs.</p>
+     768 +            <div class="tag-list">
+     769 +              <span class="tag">Kali Linux</span>
+     770 +              <span class="tag">Burp Suite</span>
+     771 +              <span class="tag">Metasploit</span>
+     772 +              <span class="tag">Nmap</span>
+     773 +              <span class="tag">Wireshark</span>
+     774 +              <span class="tag">SQLmap</span>
+     775 +              <span class="tag">Gobuster</span>
+     776 +            </div>
+     777 +          </div>
+     778 +
+     779 +          <div class="card">
+     780 +            <div class="icon">DEV</div>
+     781 +            <h3>Programming</h3>
+     782 +            <p>Languages and web technologies I use to build tools, scripts, and interfaces.</p>
+     783 +            <div class="tag-list">
+     784 +              <span class="tag">Python</span>
+     785 +              <span class="tag">Java</span>
+     786 +              <span class="tag">SQL</span>
+     787 +              <span class="tag">Bash / Shell</span>
+     788 +              <span class="tag">HTML / CSS</span>
+     789 +              <span class="tag">JavaScript</span>
+     790 +            </div>
+     791 +          </div>
+     792 +
+     793 +          <div class="card">
+     794 +            <div class="icon">NET</div>
+     795 +            <h3>Security Domains</h3>
+     796 +            <p>Areas of cybersecurity I am actively learning and applying through projects.</p>
+     797 +            <div class="tag-list">
+     798 +              <span class="tag">Web App Pentesting</span>
+     799 +              <span class="tag">Network Security</span>
+     800 +              <span class="tag">IoT Security</span>
+     801 +              <span class="tag">Digital Forensics</span>
+     802 +              <span class="tag">MQTT Protocol</span>
+     803 +            </div>
+     804 +          </div>
+     805 +
+     806 +          <div class="card">
+     807 +            <div class="icon">LAB</div>
+     808 +            <h3>Platforms & Labs</h3>
+     809 +            <p>Practice environments and platforms I use for hands-on cybersecurity learning.</p>
+     810 +            <div class="tag-list">
+     811 +              <span class="tag">Metasploitable 2</span>
+     812 +              <span class="tag">TryHackMe</span>
+     813 +              <span class="tag">GitHub</span>
+     814 +              <span class="tag">MySQL Workbench</span>
+     815 +            </div>
+     816 +          </div>
+     817 +
+     818 +          <div class="card">
+     819 +            <div class="icon">NOW</div>
+     820 +            <h3>Currently Learning</h3>
+     821 +            <p>Topics and certifications I am working on to strengthen my security foundation.</p>
+     822 +            <div class="tag-list">
+     823 +              <span class="tag">eJPT</span>
+     824 +              <span class="tag">CTF Challenges</span>
+     825 +              <span class="tag">Malware Analysis</span>
+     826 +            </div>
+     827 +          </div>
+     828 +        </div>
+     829 +      </div>
+     830 +    </section>
+     831 +
+     832 +    <section id="projects">
+     833 +      <div class="container">
+     834 +        <div class="section-title">
+     835 +          <h2>Security Projects</h2>
+     836 +          <p>
+     837 +            Practical projects built around ethical research, attack simulation,
+     838 +            monitoring, and cybersecurity learning.
+     839 +          </p>
+     840 +        </div>
+     841 +
+     842 +        <div class="cards two">
+     843 +          <article class="card project-card">
+     844 +            <img
+     845 +              class="project-image"
+     846 +              src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=70"
+     847 +              width="900"
+     848 +              height="506"
+     849 +              loading="lazy"
+     850 +              alt="Code editor showing a security lab project"
+     851 +            />
+     852 +            <div class="project-body">
+     853 +              <div class="icon">01</div>
+     854 +              <h3>BruteForceLab</h3>
+     855 +              <p>
+     856 +                A controlled brute-force simulation framework for studying attack vectors,
+     857 +                login security behavior, and defensive awareness in an ethical lab setup.
+     858 +              </p>
+     859 +
+     860 +              <div class="project-meta">
+     861 +                <span>Problem Solved</span>
+     862 +                Helped simulate brute-force behavior safely for cybersecurity learning and testing.
+     863 +              </div>
+     864 +
+     865 +              <div class="project-meta">
+     866 +                <span>My Contribution</span>
+     867 +                GUI development, lab workflow design, and system integration.
+     868 +              </div>
+     869 +
+     870 +              <div class="tag-list">
+     871 +                <span class="tag">Python</span>
+     872 +                <span class="tag">Kali Linux</span>
+     873 +                <span class="tag">GUI</span>
+     874 +                <span class="tag">Security Research</span>
+     875 +              </div>
+     876 +
+     877 +              <div class="card-actions">
+     878 +                <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="btn small-btn">GitHub</a>
+     879 +                <a href="#contact" class="btn secondary small-btn">Discuss Project</a>
+     880 +              </div>
+     881 +            </div>
+     882 +          </article>
+     883 +
+     884 +          <article class="card project-card">
+     885 +            <img
+     886 +              class="project-image"
+     887 +              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70"
+     888 +              width="900"
+     889 +              height="506"
+     890 +              loading="lazy"
+     891 +              alt="Server and network hardware representing IoT security monitoring"
+     892 +            />
+     893 +            <div class="project-body">
+     894 +              <div class="icon">02</div>
+     895 +              <h3>VITGuard</h3>
+     896 +              <p>
+     897 +                A six-layer IoT security monitoring system with threat detection,
+     898 +                network monitoring, MQTT-based communication, and incident response simulation.
+     899 +              </p>
+     900 +
+     901 +              <div class="project-meta">
+     902 +                <span>Problem Solved</span>
+     903 +                Simulated how IoT devices can be monitored for suspicious activity and response triggers.
+     904 +              </div>
+     905 +
+     906 +              <div class="project-meta">
+     907 +                <span>My Contribution</span>
+     908 +                Victim app simulation module, security engine logic, and monitoring workflow.
+     909 +              </div>
+     910 +
+     911 +              <div class="tag-list">
+     912 +                <span class="tag">IoT</span>
+     913 +                <span class="tag">MQTT</span>
+     914 +                <span class="tag">Python</span>
+     915 +                <span class="tag">Security Engine</span>
+     916 +                <span class="tag">Network Monitoring</span>
+     917 +              </div>
+     918 +
+     919 +              <div class="card-actions">
+     920 +                <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="btn small-btn">GitHub</a>
+     921 +                <a href="#contact" class="btn secondary small-btn">Discuss Project</a>
+     922 +              </div>
+     923 +            </div>
+     924 +          </article>
+     925 +        </div>
+     926 +      </div>
+     927 +    </section>
+     928 +
+     929 +    <section class="section-alt" id="certifications">
+     930 +      <div class="container">
+     931 +        <div class="section-title">
+     932 +          <h2>Certifications & Learning</h2>
+     933 +          <p>
+     934 +            Certifications, labs, and learning tracks connected to cybersecurity,
+     935 +            penetration testing, and database fundamentals.
+     936 +          </p>
+     937 +        </div>
+     938 +
+     939 +        <div class="cards">
+     940 +          <div class="card cert-card">
+     941 +            <div class="icon">THM</div>
+     942 +            <div>
+     943 +              <h3>TryHackMe</h3>
+     944 +              <p>Penetration testing labs and hands-on security practice.</p>
+     945 +              <span class="cert-status">Active</span>
+     946 +            </div>
+     947 +          </div>
+     948 +
+     949 +          <div class="card cert-card">
+     950 +            <div class="icon">GCP</div>
+     951 +            <div>
+     952 +              <h3>Google Cybersecurity</h3>
+     953 +              <p>Professional Certificate via Coursera.</p>
+     954 +              <span class="cert-status">Coursera</span>
+     955 +            </div>
+     956 +          </div>
+     957 +
+     958 +          <div class="card cert-card">
+     959 +            <div class="icon">MDB</div>
+     960 +            <div>
+     961 +              <h3>MongoDB</h3>
+     962 +              <p>Database certification from MongoDB University.</p>
+     963 +              <span class="cert-status">MongoDB University</span>
+     964 +            </div>
+     965 +          </div>
+     966 +
+     967 +          <div class="card cert-card">
+     968 +            <div class="icon">eJPT</div>
+     969 +            <div>
+     970 +              <h3>eJPT / CEH</h3>
+     971 +              <p>Industry certification preparation for penetration testing fundamentals.</p>
+     972 +              <span class="cert-status">In Progress</span>
+     973 +            </div>
+     974 +          </div>
+     975 +        </div>
+     976 +      </div>
+     977 +    </section>
+     978 +
+     979 +    <section class="contact" id="contact">
+     980 +      <div class="container">
+     981 +        <div class="section-title">
+     982 +          <h2>Let's Connect</h2>
+     983 +          <p>
+     984 +            I am actively looking for cybersecurity internships. Whether you have an opportunity,
+     985 +            want to collaborate on a CTF, or want to discuss security projects, my inbox is open.
+     986 +          </p>
+     987 +        </div>
+     988 +
+     989 +        <div class="contact-links">
+     990 +          <a href="mailto:shubham2chaipa1102@gmail.com" class="btn">Email Me</a>
+     991 +          <a href="Shubham-Sharma-Resume.pdf" class="btn secondary" download>Download Resume</a>
+     992 +          <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="btn secondary">GitHub</a>
+     993 +          <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" rel="noopener noreferrer" class="btn secondary">LinkedIn</a>
+     994 +          <a href="https://www.instagram.com/shubham_chaipa" target="_blank" rel="noopener noreferrer" class="btn secondary">Instagram</a>
+     995 +          <a href="https://wa.me/917891464270" target="_blank" rel="noopener noreferrer" class="btn secondary">WhatsApp</a>
+     996 +        </div>
+     997 +      </div>
+     998 +    </section>
+     999 +  </main>
+    1000 +
+    1001 +  <footer>
+    1002 +    Designed & Built by <span>Shubham Sharma</span> | VIT Bhopal | 2026
+    1003 +  </footer>
+    1004 +</body>
+    1005 +</html>

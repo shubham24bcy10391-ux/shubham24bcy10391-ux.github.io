@@ -3,1013 +3,416 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Shubham Sharma is a B.Tech CSE Cybersecurity and Digital Forensics student at VIT Bhopal focused on ethical hacking, penetration testing, IoT security, and digital forensics."
-  />
-  <meta property="og:title" content="Shubham Sharma | Cybersecurity Portfolio" />
-  <meta property="og:description" content="Cybersecurity student focused on ethical hacking, penetration testing, IoT security, and practical security projects." />
+  <meta name="description" content="Shubham Sharma is a B.Tech CSE Cybersecurity and Digital Forensics student at VIT Bhopal focused on ethical hacking, penetration testing, IoT security, and digital forensics." />
+  <meta property="og:title" content="Shubham Sharma | 3D Cybersecurity Portfolio" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shubhamchaipa.me/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=70" />
-  <meta name="theme-color" content="#05070d" />
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70" />
-  <title>Shubham Sharma | Cybersecurity Portfolio</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #05070d;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 20;
-      background: rgba(5, 7, 13, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #34f5c5;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 26px;
-      font-size: 14px;
-      color: #c9d3df;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: #34f5c5;
-    }
-
-    .menu-toggle {
-      display: none;
-    }
-
-    .menu-button {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 6px;
-      background: transparent;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .menu-button span,
-    .menu-button::before,
-    .menu-button::after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      height: 2px;
-      background: #ffffff;
-      transition: 0.25s ease;
-    }
-
-    .menu-button span {
-      top: 20px;
-    }
-
-    .menu-button::before {
-      top: 13px;
-    }
-
-    .menu-button::after {
-      top: 27px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 20px;
-      border: 1px solid #34f5c5;
-      background: #34f5c5;
-      color: #04100d;
-      font-weight: 700;
-      border-radius: 4px;
-      transition: 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      background: transparent;
-      color: #34f5c5;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .btn.secondary:hover,
-    .btn.secondary:focus-visible {
-      border-color: #34f5c5;
-      color: #34f5c5;
-    }
-
-    .hero {
-      min-height: 100vh;
-      padding: 145px 20px 80px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(5, 7, 13, 0.55), rgba(5, 7, 13, 0.94)),
-        url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=70");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-inner {
-      width: 100%;
-      max-width: 1180px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: #34f5c5;
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 88px);
-      line-height: 0.95;
-      max-width: 780px;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: #c6d0dc;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .hero-actions,
-    .quick-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .quick-links {
-      margin-top: 18px;
-      color: #aebccd;
-      font-size: 14px;
-    }
-
-    .quick-links a {
-      border-bottom: 1px solid rgba(52, 245, 197, 0.5);
-    }
-
-    .quick-links a:hover {
-      color: #34f5c5;
-    }
-
-    .security-panel {
-      border: 1px solid rgba(52, 245, 197, 0.32);
-      background: rgba(8, 14, 24, 0.8);
-      border-radius: 8px;
-      padding: 28px;
-      box-shadow: 0 0 60px rgba(52, 245, 197, 0.14);
-    }
-
-    .security-panel h3 {
-      margin-bottom: 20px;
-      font-size: 22px;
-    }
-
-    .scan-line {
-      height: 8px;
-      background: linear-gradient(90deg, transparent, #34f5c5, transparent);
-      margin: 22px 0;
-      animation: scan 2.6s infinite;
-    }
-
-    @keyframes scan {
-      0% { transform: translateY(-8px); opacity: 0.2; }
-      50% { opacity: 1; }
-      100% { transform: translateY(8px); opacity: 0.2; }
-    }
-
-    .panel-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-      color: #dce7f2;
-      font-size: 14px;
-    }
-
-    .status {
-      color: #34f5c5;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    section {
-      padding: 92px 20px;
-    }
-
-    .container {
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .section-title {
-      max-width: 760px;
-      margin-bottom: 44px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      margin-bottom: 18px;
-    }
-
-    .section-title p {
-      color: #aebccd;
-      font-size: 17px;
-    }
-
-    .stats {
-      background: #0a111d;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .stat h3 {
-      color: #34f5c5;
-      font-size: 42px;
-      margin-bottom: 6px;
-    }
-
-    .stat p {
-      color: #aebccd;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-card,
-    .terminal {
-      background: #060a12;
-      border: 1px solid rgba(52, 245, 197, 0.25);
-      border-radius: 8px;
-      padding: 28px;
-    }
-
-    .about-card {
-      color: #dce7f2;
-    }
-
-    .about-card h3 {
-      color: #34f5c5;
-      margin-bottom: 18px;
-    }
-
-    .about-card p {
-      margin-bottom: 14px;
-      color: #c4cedb;
-    }
-
-    .terminal {
-      font-family: Consolas, "Courier New", monospace;
-      color: #9fffe8;
-      min-height: 340px;
-      overflow-x: auto;
-    }
-
-    .terminal div {
-      margin-bottom: 14px;
-      white-space: nowrap;
-    }
-
-    .section-alt {
-      background: #0a111d;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .cards.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card {
-      background: #0b1220;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 8px;
-      padding: 28px;
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(52, 245, 197, 0.55);
-    }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      background: rgba(52, 245, 197, 0.12);
-      color: #34f5c5;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .card p {
-      color: #aebccd;
-      margin-bottom: 18px;
-    }
-
-    .project-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .project-image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-    }
-
-    .project-body {
-      padding: 28px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 8px 11px;
-      border-radius: 4px;
-      background: rgba(52, 245, 197, 0.1);
-      color: #bfffee;
-      border: 1px solid rgba(52, 245, 197, 0.2);
-      font-size: 13px;
-    }
-
-    .project-meta {
-      margin: 18px 0;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 6px;
-      color: #dce7f2;
-    }
-
-    .project-meta span {
-      display: block;
-      color: #34f5c5;
-      font-weight: 700;
-      margin-bottom: 4px;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .small-btn {
-      min-height: 40px;
-      padding: 9px 14px;
-      font-size: 14px;
-    }
-
-    .cert-card {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .cert-status {
-      display: inline-block;
-      margin-top: 10px;
-      color: #34f5c5;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .contact {
-      background:
-        linear-gradient(rgba(5, 7, 13, 0.88), rgba(5, 7, 13, 0.95)),
-        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=70");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    footer {
-      padding: 28px 20px;
-      text-align: center;
-      color: #8996a8;
-      background: #05070d;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    footer span {
-      color: #34f5c5;
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner,
-      .split,
-      .cards,
-      .cards.two,
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        flex-wrap: wrap;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .nav > .btn {
-        display: none;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        padding: 16px 0 4px;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .menu-toggle:checked ~ .menu-button span {
-        opacity: 0;
-      }
-
-      .menu-toggle:checked ~ .menu-button::before {
-        top: 20px;
-        transform: rotate(45deg);
-      }
-
-      .menu-toggle:checked ~ .menu-button::after {
-        top: 20px;
-        transform: rotate(-45deg);
-      }
-
-      .menu-toggle:checked ~ .nav-links {
-        display: flex;
-      }
-
-      .security-panel {
-        margin-top: 20px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 125px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      section {
-        padding: 72px 18px;
-      }
-
-      .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      h1 {
-        font-size: 46px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .quick-links .btn,
-      .card-actions .btn,
-      .contact-links .btn {
-        width: auto;
-      }
-
-      .panel-row {
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .cert-card {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <meta name="theme-color" content="#030508" />
+  <title>Shubham Sharma | 3D Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DXJGCZeF.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C_F_gHQ4.css">
 </head>
-
 <body>
-  <header>
-    <nav class="nav">
-      <a href="#home" class="logo">Shubham<span>Security</span></a>
-
-      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Open navigation menu" />
-      <label class="menu-button" for="menu-toggle" aria-hidden="true">
-        <span></span>
-      </label>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+  <div id="boot-loader" class="boot-screen">
+    <div class="boot-container">
+      <div class="boot-header">
+        <span class="pulse-red">●</span> SYSTEM INTRUSION INITIALIZATION
       </div>
+      <div id="boot-logs" class="boot-logs-box">
+        <div>> INITIATING AETHERSEC CORE BOOT...</div>
+      </div>
+      <div class="boot-bar-container">
+        <div id="boot-bar" class="boot-bar"></div>
+      </div>
+      <div class="boot-footer">
+        <span>SECURITY PROTOCOL: SECURE</span>
+        <span id="boot-percent">0%</span>
+      </div>
+    </div>
+  </div>
 
-      <a href="#contact" class="btn">Contact Me</a>
+  <canvas id="webgl" class="bg-canvas"></canvas>
+  <div class="crt-overlay"></div>
+
+  <div id="audio-control" class="hud-audio-control">
+    <button id="sound-toggle" aria-label="Toggle sound fx" class="audio-btn">
+      <svg class="icon-sound-off" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-8.27-.27L2.46 5.01 7.45 10H4v4h3l5 5v-6.18l4.47 4.47c-.59.44-1.25.79-1.97.98v2.01c1.26-.26 2.4-.92 3.32-1.82l2.44 2.44 1.27-1.27L3.73 3.73zM12 14.18L9.82 12 12 9.82v4.36z"/></svg>
+      <svg class="icon-sound-on hidden" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      <span class="btn-text">AUDIO OFF</span>
+    </button>
+  </div>
+
+  <div id="hud-container" class="hud-layer hidden">
+    <header class="hud-header">
+      <div class="header-logo">
+        <span class="bracket">[</span>
+        <span class="logo-text">SHUBHAM<span class="teal">.SEC</span></span>
+        <span class="bracket">]</span>
+      </div>
+      <div class="header-status">
+        <div class="status-item font-mono hide-mobile">
+          <span class="status-label">SYS_STATUS:</span>
+          <span class="status-value pulse-green text-green">ONLINE</span>
+        </div>
+        <div class="status-item font-mono hide-mobile">
+          <span class="status-label">THREAT_LEVEL:</span>
+          <span class="status-value text-red">MINIMAL</span>
+        </div>
+        <div class="status-item font-mono">
+          <span class="status-label">LOC_TIME:</span>
+          <span id="hud-time" class="status-value text-teal">00:00:00</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="hud-nav">
+      <ul>
+        <li><button class="nav-item active" data-target="about"><span class="nav-num">01</span><span class="nav-label">ABOUT_SYS</span></button></li>
+        <li><button class="nav-item" data-target="skills"><span class="nav-num">02</span><span class="nav-label">SKILL_MATRIX</span></button></li>
+        <li><button class="nav-item" data-target="projects"><span class="nav-num">03</span><span class="nav-label">OFFENSIVE_LABS</span></button></li>
+        <li><button class="nav-item" data-target="certifications"><span class="nav-num">04</span><span class="nav-label">CERT_LOGS</span></button></li>
+        <li><button class="nav-item" data-target="contact"><span class="nav-num">05</span><span class="nav-label">PORT_HANDSHAKE</span></button></li>
+      </ul>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">Cybersecurity Portfolio</div>
-          <h1>Shubham Sharma</h1>
-          <p>
-            B.Tech CSE student specializing in Cybersecurity and Digital Forensics at VIT Bhopal,
-            focused on ethical hacking, penetration testing, IoT security, and practical security research.
-          </p>
+    <main class="hud-panel-container">
+      <div class="panel-border">
+        <div class="hologram-glare"></div>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn">View Security Projects</a>
-            <a href="Shubham-Sharma-Resume.pdf" class="btn secondary" download>Download Resume</a>
+        <section id="sect-about" class="hud-section active">
+          <div class="section-grid">
+            <div class="grid-left-col">
+              <h2 class="section-title text-glow">PROFILE_DECRYPT</h2>
+              <div class="profile-meta-card glassmorphism">
+                <div class="card-header border-teal"><span class="header-prefix">USR_ID_01 //</span> SHUBHAM SHARMA</div>
+                <div class="profile-rows">
+                  <div class="profile-row"><span class="row-label">AFFILIATION:</span><span class="row-value text-teal">VIT Bhopal University</span></div>
+                  <div class="profile-row"><span class="row-label">DEGREE_FIELD:</span><span class="row-value">B.Tech CSE</span></div>
+                  <div class="profile-row"><span class="row-label">SPECIALIZATION:</span><span class="row-value text-purple">Cybersecurity & Digital Forensics</span></div>
+                  <div class="profile-row"><span class="row-label">ACADEMIC_YEAR:</span><span class="row-value">2nd Year (Sophomore)</span></div>
+                  <div class="profile-row"><span class="row-label">FOCUS_DOMAIN:</span><span class="row-value text-green">Penetration Testing / IoT Security</span></div>
+                </div>
+              </div>
+              <div class="bio-terminal glassmorphism font-mono">
+                <p class="terminal-text text-green">> Initializing background bio logs...</p>
+                <p class="terminal-text">I am building a strong, hands-on, practical foundation in offensive security, vulnerability assessment, and digital forensic diagnostics.</p>
+                <p class="terminal-text">With deep research in IoT node security vulnerabilities and automated brute-forcing mitigations, I focus on transforming theoretical attacks into interactive, visual defense labs.</p>
+                <p class="terminal-text text-teal">> Open to Internship roles. Ready to deploy.</p>
+              </div>
+            </div>
+            <div class="grid-right-col">
+              <div class="telemetry-panel glassmorphism">
+                <h3 class="panel-subtitle border-teal">TELEMETRY_DATA</h3>
+                <div class="telemetry-item">
+                  <div class="telemetry-label font-mono">SECURITY_LEARNING_METRIC (2+ Years)</div>
+                  <div class="progress-bar-hud"><div class="progress-fill" style="width:75%;"></div></div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="telemetry-label font-mono">LABS_BUILT (BruteForce & VITGuard)</div>
+                  <div class="progress-bar-hud"><div class="progress-fill" style="width:85%;"></div></div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="telemetry-label font-mono">CORE_TOOLS_PRACTICED (10+)</div>
+                  <div class="progress-bar-hud"><div class="progress-fill" style="width:90%;"></div></div>
+                </div>
+                <div class="binary-stream-box font-mono">
+                  <div class="binary-header">LIVE_FORENSICS_BYTE_STREAM</div>
+                  <div id="binary-stream" class="binary-stream-code"></div>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="quick-links">
-            <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#contact">Open to Internships</a>
+        <section id="sect-skills" class="hud-section">
+          <h2 class="section-title text-glow">SKILL_MATRICES</h2>
+          <div class="skills-filter-hud font-mono">
+            <button class="filter-btn active" data-filter="all">ALL_FIELDS</button>
+            <button class="filter-btn" data-filter="sec">SECURITY_TOOLS</button>
+            <button class="filter-btn" data-filter="dev">LANGUAGES</button>
+            <button class="filter-btn" data-filter="net">DOMAINS</button>
           </div>
+          <div class="skills-grid">
+            <div class="skill-category-card glassmorphism" data-cat="sec">
+              <h3 class="card-subtitle text-teal font-mono">[SEC_TOOLS]</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-desc="Offensive operating system packed with cybersecurity tools.">Kali Linux</span>
+                <span class="skill-tag" data-desc="Web application security testing and intercepting proxy tool.">Burp Suite</span>
+                <span class="skill-tag" data-desc="Exploitation and vulnerability scanning framework.">Metasploit</span>
+                <span class="skill-tag" data-desc="Network mapper for port scanning and host discovery.">Nmap</span>
+                <span class="skill-tag" data-desc="Network traffic and packet analysis interface.">Wireshark</span>
+                <span class="skill-tag" data-desc="Automated SQL injection and database hijacking tool.">SQLmap</span>
+                <span class="skill-tag" data-desc="Directory and file brute-forcing web tool.">Gobuster</span>
+              </div>
+            </div>
+            <div class="skill-category-card glassmorphism" data-cat="dev">
+              <h3 class="card-subtitle text-purple font-mono">[LANGUAGES_DEV]</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-desc="Core scripting, automation tool creation, exploit coding language.">Python</span>
+                <span class="skill-tag" data-desc="General-purpose Object-Oriented programming framework.">Java</span>
+                <span class="skill-tag" data-desc="Database querying and relational structure manipulation.">SQL</span>
+                <span class="skill-tag" data-desc="Unix/Linux command automation and administrative scripting.">Bash / Shell</span>
+                <span class="skill-tag" data-desc="Standard structural markers and stylesheet configuration.">HTML / CSS</span>
+                <span class="skill-tag" data-desc="Client-side interactivity and asynchronous logic script.">JavaScript</span>
+              </div>
+            </div>
+            <div class="skill-category-card glassmorphism" data-cat="net">
+              <h3 class="card-subtitle text-green font-mono">[DOMAINS_SECURITY]</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-desc="Vulnerability mapping and OWASP Top 10 auditing.">Web App Pentesting</span>
+                <span class="skill-tag" data-desc="Routing, switching, firewall controls, traffic analysis.">Network Security</span>
+                <span class="skill-tag" data-desc="Vulnerability auditing of embedded IoT networks.">IoT Security</span>
+                <span class="skill-tag" data-desc="Computer network analytics and system recovery audits.">Digital Forensics</span>
+                <span class="skill-tag" data-desc="Lightweight publisher-subscriber telemetry protocol.">MQTT Protocol</span>
+              </div>
+            </div>
+            <div class="skill-category-card glassmorphism" data-cat="sec">
+              <h3 class="card-subtitle text-teal font-mono">[LAB_ENVIRONMENTS]</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-desc="Linux machine configured with security vulnerabilities.">Metasploitable 2</span>
+                <span class="skill-tag" data-desc="Interactive cybersecurity learning platform.">TryHackMe</span>
+                <span class="skill-tag" data-desc="Repository control, source tracking, and pipeline management.">GitHub</span>
+                <span class="skill-tag" data-desc="Visual database editing and administration.">MySQL Workbench</span>
+              </div>
+            </div>
+            <div class="skill-category-card glassmorphism" data-cat="net">
+              <h3 class="card-subtitle text-red font-mono">[ACTIVE_LEARNING]</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-desc="Junior Penetration Tester practical certification training.">eJPT</span>
+                <span class="skill-tag" data-desc="Capture The Flag exercises focusing on flags and exploits.">CTF Challenges</span>
+                <span class="skill-tag" data-desc="Reverse engineering, static analysis of suspicious binaries.">Malware Analysis</span>
+              </div>
+            </div>
+          </div>
+          <div id="skill-inspector" class="skill-inspector-box glassmorphism font-mono">
+            <span class="inspector-prompt">> HOVER OVER ANY MATRIX NODE TO ANALYZE SKILL METRICS...</span>
+          </div>
+        </section>
+
+        <section id="sect-projects" class="hud-section">
+          <div class="project-header">
+            <h2 class="section-title text-glow">SIMULATION_LABS</h2>
+            <div class="project-tabs font-mono">
+              <button class="proj-tab active" data-project="vitguard">VITGUARD_IDS</button>
+              <button class="proj-tab" data-project="bruteforce">BRUTEFORCE_CONSOLE</button>
+            </div>
+          </div>
+          <div class="project-content-container">
+            <div id="proj-vitguard" class="project-screen active">
+              <div class="proj-layout">
+                <div class="proj-meta-panel glassmorphism">
+                  <div class="proj-header-box border-teal"><h3>VITGuard // IoT Security Monitor</h3></div>
+                  <p class="proj-desc">A multi-layered threat detection dashboard auditing smart telemetry networks. VITGuard monitors system signals and blocks malicious telemetry flows in real-time.</p>
+                  <div class="proj-details font-mono">
+                    <div class="detail-row"><span>PROTOCOL:</span><span class="text-teal">MQTT v3.1.1</span></div>
+                    <div class="detail-row"><span>AUDIT_LAYER:</span><span>IDS Firewall</span></div>
+                    <div class="detail-row"><span>THREATS_DETECTED:</span><span class="text-red">Spoofing, Floods</span></div>
+                  </div>
+                  <div class="proj-buttons">
+                    <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="hud-btn"><span class="btn-line"></span>GIT_REPOS</a>
+                  </div>
+                </div>
+                <div class="proj-simulation-panel glassmorphism">
+                  <div class="sim-header font-mono">
+                    <span class="text-teal">> IoT_NETWORK_TOPOLOGY [LIVE]</span>
+                    <div class="sim-status">IDS: <span id="vitguard-ids-status" class="text-green font-bold">ARMED</span></div>
+                  </div>
+                  <div class="topology-area">
+                    <div class="topo-nodes-wrapper">
+                      <div class="topo-node node-gateway active" id="node-gw" data-name="MQTT_Gateway"><div class="node-icon">⚡</div><span class="node-label">GATEWAY</span></div>
+                      <div class="topo-node node-device" id="node-lock" data-name="SmartLock_Node"><div class="node-icon">🔒</div><span class="node-label">LOCK</span></div>
+                      <div class="topo-node node-device" id="node-cam" data-name="IP_Camera_Node"><div class="node-icon">📷</div><span class="node-label">CAMERA</span></div>
+                      <div class="topo-node node-device" id="node-sensor" data-name="Thermal_Sensor"><div class="node-icon">🌡️</div><span class="node-label">SENSOR</span></div>
+                      <svg class="topo-lines" viewBox="0 0 400 240">
+                        <line x1="200" y1="120" x2="80" y2="60" id="line-lock" stroke="rgba(0,255,196,0.3)" stroke-width="2"/>
+                        <line x1="200" y1="120" x2="320" y2="60" id="line-cam" stroke="rgba(0,255,196,0.3)" stroke-width="2"/>
+                        <line x1="200" y1="120" x2="200" y2="200" id="line-sensor" stroke="rgba(0,255,196,0.3)" stroke-width="2"/>
+                      </svg>
+                    </div>
+                    <div id="packet-container" class="packets-overlay"></div>
+                  </div>
+                  <div class="sim-controls font-mono">
+                    <div class="control-group">
+                      <span class="control-title">TARGET NODE:</span>
+                      <select id="vitguard-target" class="hud-select">
+                        <option value="lock">SmartLock (Node 01)</option>
+                        <option value="cam">IP_Camera (Node 02)</option>
+                        <option value="sensor">ThermalSensor (Node 03)</option>
+                      </select>
+                    </div>
+                    <div class="control-buttons">
+                      <button id="btn-inject-threat" class="hud-btn-danger"><span class="btn-line"></span>INJECT_EXPLOIT</button>
+                      <button id="btn-toggle-ids" class="hud-btn-warning"><span class="btn-line"></span>TOGGLE_FIREWALL</button>
+                    </div>
+                  </div>
+                  <div class="sim-feed glassmorphism font-mono">
+                    <div class="feed-header">IDS_FORENSIC_FEED_MONITOR</div>
+                    <div id="vitguard-logs" class="feed-content">
+                      <div>[SYSTEM] VITGuard monitoring active on mqtt://broker.vitguard.sec...</div>
+                      <div>[SYSTEM] Listening to telemetry logs on channel /vitbhopal/iot/#...</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="proj-bruteforce" class="project-screen">
+              <div class="proj-layout">
+                <div class="proj-meta-panel glassmorphism">
+                  <div class="proj-header-box border-teal"><h3>BruteForceLab // Attack Simulator</h3></div>
+                  <p class="proj-desc">An offensive auditing simulation platform demonstrating the danger of credential leakage, weakness mapping, and key rotation speeds in authentication targets.</p>
+                  <div class="proj-details font-mono">
+                    <div class="detail-row"><span>ATTACK_TYPE:</span><span class="text-red">Dictionary Exploit</span></div>
+                    <div class="detail-row"><span>VELOCITY:</span><span>~2,500 keys/sec</span></div>
+                    <div class="detail-row"><span>Mitigation:</span><span class="text-green">Dynamic Lockout</span></div>
+                  </div>
+                  <div class="proj-buttons">
+                    <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="hud-btn"><span class="btn-line"></span>GIT_REPOS</a>
+                  </div>
+                </div>
+                <div class="proj-simulation-panel glassmorphism">
+                  <div class="sim-header font-mono">
+                    <span class="text-red">> BRUTE_FORCE_ENGINE [OFFENSIVE]</span>
+                    <div class="sim-status">SAFE_STATUS: <span id="vault-status" class="text-green font-bold">LOCKED</span></div>
+                  </div>
+                  <div class="brute-arena">
+                    <div class="lock-graphic-container">
+                      <div class="hologram-vault">
+                        <div class="vault-ring" id="ring-1"><span class="ring-num">0</span><span class="ring-num">1</span><span class="ring-num">2</span><span class="ring-num">3</span><span class="ring-num">4</span><span class="ring-num">5</span><span class="ring-num">6</span><span class="ring-num">7</span><span class="ring-num">8</span><span class="ring-num">9</span></div>
+                        <div class="vault-ring" id="ring-2"><span class="ring-num">0</span><span class="ring-num">1</span><span class="ring-num">2</span><span class="ring-num">3</span><span class="ring-num">4</span><span class="ring-num">5</span><span class="ring-num">6</span><span class="ring-num">7</span><span class="ring-num">8</span><span class="ring-num">9</span></div>
+                        <div class="vault-ring" id="ring-3"><span class="ring-num">0</span><span class="ring-num">1</span><span class="ring-num">2</span><span class="ring-num">3</span><span class="ring-num">4</span><span class="ring-num">5</span><span class="ring-num">6</span><span class="ring-num">7</span><span class="ring-num">8</span><span class="ring-num">9</span></div>
+                      </div>
+                      <div class="vault-indicator">▲</div>
+                    </div>
+                    <div class="brute-form font-mono">
+                      <div class="form-row">
+                        <span class="form-label">TARGET PASSWORD:</span>
+                        <input type="text" id="brute-password" class="hud-input" value="482" maxlength="3" pattern="\d{3}" placeholder="3-digit" />
+                      </div>
+                      <div class="form-row">
+                        <span class="form-label">SPEED:</span>
+                        <select id="brute-speed" class="hud-select">
+                          <option value="1">Realistic (15 keys/sec)</option>
+                          <option value="10">High Speed (200 keys/sec)</option>
+                          <option value="50">Hacker Speed (Matrix Level)</option>
+                        </select>
+                      </div>
+                      <button id="btn-start-brute" class="hud-btn-danger width-full"><span class="btn-line"></span>RUN_DECRYPTION_ATTACK</button>
+                    </div>
+                  </div>
+                  <div class="sim-feed glassmorphism font-mono">
+                    <div class="feed-header">CRACKING_STREAM_TELEMETRY</div>
+                    <div id="brute-logs" class="feed-content brute-log-content">
+                      <div>[SYSTEM] Ready for key injection audit. Specify target and trigger.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sect-certifications" class="hud-section">
+          <h2 class="section-title text-glow">VERIFIED_SECURITY_CREDENTIALS</h2>
+          <div class="certifications-grid">
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-teal">[THM]</span><span class="cert-status pulse-green">ACTIVE</span></div>
+              <h3 class="cert-title">TryHackMe Practice Labs</h3>
+              <p class="cert-text">Hands-on interactive lab exercises covering network routing exploitation, web security loopholes, and privilege escalation.</p>
+            </div>
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-teal">[GCP]</span><span class="cert-status">COMPLETED</span></div>
+              <h3 class="cert-title">Google Cybersecurity Certificate</h3>
+              <p class="cert-text">Professional program via Coursera encompassing terminal automation, incident response pipelines, and SIEM tool implementation.</p>
+            </div>
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-purple">[CY1]</span><a href="https://coursera.org/share/5c06c3a51729b889128ef601846f7374" target="_blank" rel="noopener noreferrer" class="cert-link">VERIFY ↗</a></div>
+              <h3 class="cert-title">Foundations of Cybersecurity</h3>
+              <p class="cert-text">Coursera/Google certification covering core security infrastructure, threats, risk audits, and mitigation models.</p>
+            </div>
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-purple">[NET]</span><a href="https://coursera.org/verify/7M1WXX3JI7RO" target="_blank" rel="noopener noreferrer" class="cert-link">VERIFY ↗</a></div>
+              <h3 class="cert-title">Bits and Bytes of Networking</h3>
+              <p class="cert-text">Coursera/Google certification covering TCP/IP, DNS architecture, socket handshakes, and packet forensics.</p>
+            </div>
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-green">[MDB]</span><span class="cert-status">COMPLETED</span></div>
+              <h3 class="cert-title">MongoDB Developer</h3>
+              <p class="cert-text">Database fundamentals covering NoSQL document patterns, aggregation pipelines, and database access controls.</p>
+            </div>
+            <div class="cert-item-card glassmorphism">
+              <div class="cert-header"><span class="cert-badge text-yellow">[eJPT]</span><span class="cert-status text-yellow">IN_PROGRESS</span></div>
+              <h3 class="cert-title">eJPT / CEH Training</h3>
+              <p class="cert-text">Lab preparation focused on junior penetration testing frameworks, network enumeration, and dynamic system auditing.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="sect-contact" class="hud-section">
+          <div class="section-grid">
+            <div class="grid-left-col">
+              <h2 class="section-title text-glow">PORT_HANDSHAKE</h2>
+              <form id="contact-form" class="contact-hud-form glassmorphism font-mono" onsubmit="event.preventDefault();">
+                <div class="form-row">
+                  <label for="form-name">SOURCE_IDENTITY:</label>
+                  <input type="text" id="form-name" class="hud-input" placeholder="Your Name / Organization" required />
+                </div>
+                <div class="form-row">
+                  <label for="form-email">COMM_PORT_EMAIL:</label>
+                  <input type="email" id="form-email" class="hud-input" placeholder="you@domain.com" required />
+                </div>
+                <div class="form-row">
+                  <label for="form-message">TRANSMISSION_DATA:</label>
+                  <textarea id="form-message" class="hud-input input-textarea" placeholder="Input encrypted communication telemetry here..." required></textarea>
+                </div>
+                <button type="submit" id="btn-submit-contact" class="hud-btn width-full"><span class="btn-line"></span>TRANSMIT_SECURE_PACKET</button>
+              </form>
+            </div>
+            <div class="grid-right-col">
+              <div class="telemetry-panel glassmorphism">
+                <h3 class="panel-subtitle border-teal">DIRECT_SOCKET_ADDRESS</h3>
+                <div class="contact-direct-links font-mono">
+                  <div class="direct-row"><span class="direct-lbl">EMAIL:</span><a href="mailto:shubham2chaipa1102@gmail.com" class="direct-val text-teal">shubham2chaipa1102@gmail.com</a></div>
+                  <div class="direct-row"><span class="direct-lbl">GITHUB:</span><a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="direct-val text-purple">shubham24bcy10391-ux</a></div>
+                  <div class="direct-row"><span class="direct-lbl">LINKEDIN:</span><a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" rel="noopener noreferrer" class="direct-val text-green">shubham-sharma-513230325</a></div>
+                  <div class="direct-row"><span class="direct-lbl">INSTAGRAM:</span><a href="https://www.instagram.com/shubham_chaipa" target="_blank" rel="noopener noreferrer" class="direct-val text-teal">@shubham_chaipa</a></div>
+                  <div class="direct-row"><span class="direct-lbl">WHATSAPP:</span><a href="https://wa.me/917891464270" target="_blank" rel="noopener noreferrer" class="direct-val text-teal">+91 7891464270</a></div>
+                  <div class="direct-row"><span class="direct-lbl">RESUME:</span><a href="/Shubham-Sharma-Resume.pdf" class="direct-val text-yellow" download>Download_Resume.pdf ↴</a></div>
+                </div>
+                <div class="forensics-log-box glassmorphism font-mono">
+                  <div class="log-title">TRANSMISSION_HANDSHAKE_TELEMETRY</div>
+                  <div id="contact-transmission-log" class="transmission-log-content">
+                    <div>[SOCKET] Idle. Awaiting identity payload injection.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="hud-terminal" class="hud-terminal-container">
+      <div class="terminal-header font-mono">
+        <span class="terminal-title">⚡ AETHERSEC_MOCK_SHELL_v1.0.8</span>
+        <button id="terminal-toggle-btn" class="terminal-header-btn">_ MINIMIZE</button>
+      </div>
+      <div class="terminal-body font-mono">
+        <div id="terminal-output" class="terminal-output-box">
+          <div>========================================================================</div>
+          <div>  Welcome to Shubham Sharma's Active Security CLI. Type 'help' for commands.</div>
+          <div>========================================================================</div>
+          <div>Awaiting instruction...</div>
         </div>
-
-        <div class="security-panel">
-          <h3>Profile Snapshot</h3>
-          <div class="scan-line"></div>
-
-          <div class="panel-row">
-            <span>University</span>
-            <span class="status">VIT Bhopal</span>
-          </div>
-
-          <div class="panel-row">
-            <span>Degree</span>
-            <span class="status">B.Tech CSE</span>
-          </div>
-
-          <div class="panel-row">
-            <span>Specialization</span>
-            <span class="status">Cybersecurity & DF</span>
-          </div>
-
-          <div class="panel-row">
-            <span>Current Focus</span>
-            <span class="status">Pentesting</span>
-          </div>
-
-          <div class="panel-row">
-            <span>Availability</span>
-            <span class="status">Internships</span>
-          </div>
+        <div class="terminal-input-row">
+          <span class="prompt-symbol">guest@shubham.sec:~$</span>
+          <input type="text" id="terminal-input" class="terminal-input-field" placeholder="Enter shell command..." autocomplete="off" />
         </div>
       </div>
-    </section>
-
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat">
-          <h3>2+</h3>
-          <p>Years of Cybersecurity Learning</p>
-        </div>
-
-        <div class="stat">
-          <h3>2</h3>
-          <p>Security Projects Built</p>
-        </div>
-
-        <div class="stat">
-          <h3>10+</h3>
-          <p>Security Tools Practiced</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container split">
-        <div>
-          <div class="section-title">
-            <h2>About Me</h2>
-            <p>
-              I am building a strong practical foundation in offensive security, network analysis,
-              IoT security, and digital forensics.
-            </p>
-          </div>
-
-          <div class="about-card">
-            <h3>Cybersecurity Student & Security Builder</h3>
-            <p>
-              I am a second-year Computer Science Engineering student specializing in Cybersecurity
-              and Digital Forensics at VIT Bhopal University.
-            </p>
-            <p>
-              My work focuses on ethical hacking, penetration testing labs, web application security,
-              network traffic analysis, and IoT security simulations.
-            </p>
-            <p>
-              I am actively looking for cybersecurity internships where I can contribute to security
-              testing, research, automation, and defensive monitoring projects.
-            </p>
-          </div>
-        </div>
-
-        <div class="terminal">
-          <div>&gt; name: Shubham Sharma</div>
-          <div>&gt; degree: B.Tech CSE</div>
-          <div>&gt; specialization: Cybersecurity & Digital Forensics</div>
-          <div>&gt; university: VIT Bhopal University</div>
-          <div>&gt; year: 2nd Year</div>
-          <div>&gt; focus: Penetration Testing</div>
-          <div>&gt; focus: IoT Security</div>
-          <div>&gt; focus: Digital Forensics</div>
-          <div>&gt; internship_available: true</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-alt" id="skills">
-      <div class="container">
-        <div class="section-title">
-          <h2>Technical Skills</h2>
-          <p>
-            A focused skill set across offensive security, programming, network analysis,
-            cybersecurity labs, and security research.
-          </p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <div class="icon">SEC</div>
-            <h3>Security Tools</h3>
-            <p>Tools I use for penetration testing, scanning, analysis, and exploitation labs.</p>
-            <div class="tag-list">
-              <span class="tag">Kali Linux</span>
-              <span class="tag">Burp Suite</span>
-              <span class="tag">Metasploit</span>
-              <span class="tag">Nmap</span>
-              <span class="tag">Wireshark</span>
-              <span class="tag">SQLmap</span>
-              <span class="tag">Gobuster</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="icon">DEV</div>
-            <h3>Programming</h3>
-            <p>Languages and web technologies I use to build tools, scripts, and interfaces.</p>
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">Java</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Bash / Shell</span>
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">JavaScript</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="icon">NET</div>
-            <h3>Security Domains</h3>
-            <p>Areas of cybersecurity I am actively learning and applying through projects.</p>
-            <div class="tag-list">
-              <span class="tag">Web App Pentesting</span>
-              <span class="tag">Network Security</span>
-              <span class="tag">IoT Security</span>
-              <span class="tag">Digital Forensics</span>
-              <span class="tag">MQTT Protocol</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="icon">LAB</div>
-            <h3>Platforms & Labs</h3>
-            <p>Practice environments and platforms I use for hands-on cybersecurity learning.</p>
-            <div class="tag-list">
-              <span class="tag">Metasploitable 2</span>
-              <span class="tag">TryHackMe</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">MySQL Workbench</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="icon">NOW</div>
-            <h3>Currently Learning</h3>
-            <p>Topics and certifications I am working on to strengthen my security foundation.</p>
-            <div class="tag-list">
-              <span class="tag">eJPT</span>
-              <span class="tag">CTF Challenges</span>
-              <span class="tag">Malware Analysis</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-title">
-          <h2>Security Projects</h2>
-          <p>
-            Practical projects built around ethical research, attack simulation,
-            monitoring, and cybersecurity learning.
-          </p>
-        </div>
-
-        <div class="cards two">
-          <article class="card project-card">
-            <img
-              class="project-image"
-              src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=70"
-              width="900"
-              height="506"
-              loading="lazy"
-              alt="Code editor showing a security lab project"
-            />
-            <div class="project-body">
-              <div class="icon">01</div>
-              <h3>BruteForceLab</h3>
-              <p>
-                A controlled brute-force simulation framework for studying attack vectors,
-                login security behavior, and defensive awareness in an ethical lab setup.
-              </p>
-
-              <div class="project-meta">
-                <span>Problem Solved</span>
-                Helped simulate brute-force behavior safely for cybersecurity learning and testing.
-              </div>
-
-              <div class="project-meta">
-                <span>My Contribution</span>
-                GUI development, lab workflow design, and system integration.
-              </div>
-
-              <div class="tag-list">
-                <span class="tag">Python</span>
-                <span class="tag">Kali Linux</span>
-                <span class="tag">GUI</span>
-                <span class="tag">Security Research</span>
-              </div>
-
-              <div class="card-actions">
-                <a href="https://github.com/shubham24bcy10391-ux/brute-force-simulation/tree/main" target="_blank" rel="noopener noreferrer" class="btn small-btn">GitHub</a>
-                <a href="#contact" class="btn secondary small-btn">Discuss Project</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <img
-              class="project-image"
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70"
-              width="900"
-              height="506"
-              loading="lazy"
-              alt="Server and network hardware representing IoT security monitoring"
-            />
-            <div class="project-body">
-              <div class="icon">02</div>
-              <h3>VITGuard</h3>
-              <p>
-                A six-layer IoT security monitoring system with threat detection,
-                network monitoring, MQTT-based communication, and incident response simulation.
-              </p>
-
-              <div class="project-meta">
-                <span>Problem Solved</span>
-                Simulated how IoT devices can be monitored for suspicious activity and response triggers.
-              </div>
-
-              <div class="project-meta">
-                <span>My Contribution</span>
-                Victim app simulation module, security engine logic, and monitoring workflow.
-              </div>
-
-              <div class="tag-list">
-                <span class="tag">IoT</span>
-                <span class="tag">MQTT</span>
-                <span class="tag">Python</span>
-                <span class="tag">Security Engine</span>
-                <span class="tag">Network Monitoring</span>
-              </div>
-
-              <div class="card-actions">
-                <a href="https://github.com/shubham24bcy10391-ux/IoT-security-monitoring-framework" target="_blank" rel="noopener noreferrer" class="btn small-btn">GitHub</a>
-                <a href="#contact" class="btn secondary small-btn">Discuss Project</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-alt" id="certifications">
-      <div class="container">
-        <div class="section-title">
-          <h2>Certifications & Learning</h2>
-          <p>
-            Certifications, labs, and learning tracks connected to cybersecurity,
-            penetration testing, and database fundamentals.
-          </p>
-        </div>
-
-        <div class="cards">
-          <div class="card cert-card">
-            <div class="icon">THM</div>
-            <div>
-              <h3>TryHackMe</h3>
-              <p>Penetration testing labs and hands-on security practice.</p>
-              <span class="cert-status">● Active</span>
-            </div>
-          </div>
-
-          <div class="card cert-card">
-            <div class="icon">GCP</div>
-            <div>
-              <h3>Google Cybersecurity</h3>
-              <p>Professional Certificate via Coursera.</p>
-              <span class="cert-status">● Completed</span>
-            </div>
-          </div>
-          <div class="card cert-card">
-  <div class="icon">CY1</div>
-  <div>
-    <h3>Foundations of Cybersecurity</h3>
-    <p>Certificate by Coursera — Core cybersecurity concepts, threats, and frameworks.</p>
-    <a href="https://coursera.org/share/5c06c3a51729b889128ef601846f7374" target="_blank" rel="noopener noreferrer" class="cert-status" style="display:inline-block;margin-top:10px;">● Verify Certificate ↗</a>
+    </div>
   </div>
-</div>
-          <div class="card cert-card">
-  <div class="icon">NET</div>
-  <div>
-    <h3>Bits and Bytes of Computer Networking</h3>
-    <p>Certificate by Coursera — Networking fundamentals, protocols, and data transmission.</p>
-    <a href="https://coursera.org/verify/7M1WXX3JI7RO" target="_blank" rel="noopener noreferrer" class="cert-status" style="display:inline-block;margin-top:10px;">● Verify Certificate ↗</a>
-  </div>
-</div>
 
-          <div class="card cert-card">
-            <div class="icon">MDB</div>
-            <div>
-              <h3>MongoDB</h3>
-              <p>Database certification from MongoDB University.</p>
-              <span class="cert-status">● Completed</span>
-            </div>
-          </div>
-
-          <div class="card cert-card">
-            <div class="icon">eJPT</div>
-            <div>
-              <h3>eJPT / CEH</h3>
-              <p>Industry certification preparation for penetration testing fundamentals.</p>
-              <span class="cert-status" style="color:#fbbf24;">● In Progress</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Let's Connect</h2>
-          <p>
-            I am actively looking for cybersecurity internships. Whether you have an opportunity,
-            want to collaborate on a CTF, or want to discuss security projects, my inbox is open.
-          </p>
-        </div>
-
-        <div class="contact-links">
-          <a href="mailto:shubham2chaipa1102@gmail.com" class="btn">📧 Email Me</a>
-          <a href="Shubham-Sharma-Resume.pdf" class="btn secondary" download>📄 Download Resume</a>
-          <a href="https://github.com/shubham24bcy10391-ux" target="_blank" rel="noopener noreferrer" class="btn secondary">⌥ GitHub</a>
-          <a href="https://www.linkedin.com/in/shubham-sharma-513230325" target="_blank" rel="noopener noreferrer" class="btn secondary">💼 LinkedIn</a>
-          <a href="https://www.instagram.com/shubham_chaipa" target="_blank" rel="noopener noreferrer" class="btn secondary">📸 Instagram</a>
-          <a href="https://wa.me/917891464270" target="_blank" rel="noopener noreferrer" class="btn secondary">💬 WhatsApp</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Designed &amp; Built by <span>Shubham Sharma</span> &nbsp;|&nbsp; . &nbsp;|&nbsp; 2026
-  </footer>
 </body>
 </html>

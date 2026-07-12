@@ -343,6 +343,20 @@ body {
 .cert-status { display: inline-block; font-family: var(--mono); font-size: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 50px; background: rgba(255,255,255,0.04); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
 .cert-status.active { background: rgba(0,230,118,0.1); color: #00e676; }
 .cert-status.wip { background: rgba(255,211,42,0.1); color: #ffd32a; }
+.cert-link {
+  display: inline-block;
+  margin: 10px 0 6px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #7dd3fc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cert-link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
 
 /* ===== CONTACT ===== */
 .contact-wrap {
